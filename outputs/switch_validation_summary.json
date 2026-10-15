@@ -1,0 +1,18 @@
+{
+  "candidate_count": 209,
+  "distinct_supporting_transaction_ids": 633,
+  "evidence_counts": {
+    "PROVISIONAL": 87,
+    "REPEATED_NEW_PROVIDER": 122,
+    "SUPPORTED_PAYMENT_PATTERN": 0
+  },
+  "externally_confirmed_switches": 0,
+  "interpretation": "Candidate payment-pattern transitions only. Checked against active Silver IDs, dates, provider/category mappings and medians; no independent contract cancellation or verified savings evidence.",
+  "observed_payment_difference_counts": {
+    "higher_new_payment": 47,
+    "lower_new_payment": 162,
+    "no_change": 0
+  },
+  "validation_status": "PASSED",
+  "verified_customer_savings": 0
+}

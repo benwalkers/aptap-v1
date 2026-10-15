@@ -1,0 +1,6 @@
+source,description,category,needs_review
+known,TESCO MOBILE,mobile,false
+corrected,OCTOPUS ENERGY,energy,false
+ambiguous,AVIVA DD,car_insurance,true
+unknown,NEBULA PAYMENT 1234,not_a_bill,true
+new,GIFFGAFF.COM,mobile,false

@@ -1,0 +1,24 @@
+description,transactions,customers,risk_tier,accepted,needs_review,decision_group,category,lexical_category,minilm_category,model_agreement,debit_volume_gbp,additional_evidence_needed
+ADMIRAL INSURANCE,462,184,high,True,False,insurance_product_unknown,car_insurance,car_insurance,car_insurance,AGREE,66284.59,Policy type or product reference
+ADMIRAL INS DD,389,151,high,True,False,insurance_product_unknown,car_insurance,car_insurance,car_insurance,AGREE,58026.41,Policy type or product reference
+CARD PAYMENT TO JOHN S,8605,1493,high,False,True,counterparty_unknown,water,water,home_insurance,DISAGREE,907051.34,"Counterparty ID, MCC/payment-purpose evidence"
+CROYDON COUNCIL,807,264,medium,False,True,council_payment_unknown,council_tax,council_tax,council_tax,AGREE,132951.9,"Council-tax reference, payment scheme or service code"
+DIRECT LINE INS,508,197,high,False,True,insurance_product_unknown,home_insurance,home_insurance,home_insurance,AGREE,27074.07,Policy type or reference
+AVIVA INSURANCE,451,178,high,False,True,insurance_product_unknown,car_insurance,car_insurance,car_insurance,AGREE,65133.7,Policy type or reference
+AVIVA DD,449,179,high,False,True,insurance_product_unknown,car_insurance,car_insurance,car_insurance,AGREE,66929.52,Policy type or reference
+DIRECTLINE DD,445,176,high,False,True,insurance_product_unknown,home_insurance,home_insurance,home_insurance,AGREE,26587.97,Policy type or reference
+VODAFONE LTD,359,122,medium,False,True,telecom_product_unknown,mobile,mobile,mobile,AGREE,9422.85,Product reference or bank-verified rule
+AMAZON PRIME*,338,109,medium,False,True,prime_bundled_product,streaming,streaming,streaming,AGREE,2997.0,Approved taxonomy mapping for bundled membership
+LV= DD,313,121,high,False,True,insurance_product_unknown,home_insurance,home_insurance,home_insurance,AGREE,16073.89,Policy type or reference
+AMZNPRIME UK,302,97,medium,False,True,prime_bundled_product,streaming,streaming,streaming,AGREE,2664.0,Approved taxonomy mapping for bundled membership
+LV INSURANCE,283,110,high,False,True,insurance_product_unknown,home_insurance,home_insurance,home_insurance,AGREE,14822.42,Policy type or reference
+BRITISH GAS SERVICES,271,90,high,False,True,service_product_unknown,energy,energy,energy,AGREE,34131.56,Product/contract service code
+LIVERPOOL VICTORIA,259,103,high,False,True,insurance_product_unknown,not_a_bill,not_a_bill,council_tax,DISAGREE,14439.27,Policy type or insurance product code
+VIRGIN MEDIA PYMTS,237,79,medium,False,True,telecom_product_unknown,broadband,broadband,broadband,AGREE,13096.41,Product code or bank-verified rule
+VIRGIN MEDIA,235,76,medium,False,True,telecom_product_unknown,broadband,broadband,broadband,AGREE,12937.75,Contract product code or approved broadband-only business rule
+VIRGINMEDIA DD,228,75,medium,False,True,telecom_product_unknown,broadband,broadband,broadband,AGREE,12175.0,Product code or bank-verified rule
+BT GROUP PLC,220,72,high,False,True,telecom_product_unknown,gym,gym,broadband,DISAGREE,8939.87,Telecom product/payment reference
+SKY DIGITAL,194,65,medium,False,True,telecom_product_unknown,broadband,broadband,broadband,AGREE,8892.66,Product code or bank-verified rule
+EE LIMITED,183,65,medium,False,True,telecom_product_unknown,mobile,mobile,mobile,AGREE,5661.27,Product reference or bank-verified rule
+SKY UK LTD,178,59,medium,False,True,telecom_product_unknown,broadband,broadband,broadband,AGREE,7735.51,Product code or bank-verified rule
+SKY UK LIMITED DD,168,56,medium,False,True,telecom_product_unknown,broadband,broadband,broadband,AGREE,7989.9,Product code or bank-verified rule

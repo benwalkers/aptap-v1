@@ -1,0 +1,12 @@
+work/
+outputs/
+report/
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+.git/
+ai_transcripts/
+DESIGN_ASSESSMENT.md
+ORIGINAL_ASSIGNMENT.md
+data/transactions_*

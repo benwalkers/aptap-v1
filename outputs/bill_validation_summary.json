@@ -1,0 +1,22 @@
+{
+  "as_of": "2026-09-30",
+  "bills_with_monthly_total_gap_gt_10pct": 7,
+  "bills_with_multiple_payments_in_any_month": 267,
+  "bills_with_same_day_same_amount_payment_groups": 267,
+  "cadence_counts": {
+    "monthly": 6561,
+    "monthly_candidate": 120
+  },
+  "candidate_count": 6681,
+  "distinct_supporting_transaction_ids": 19938,
+  "externally_verified_recurring_contracts": 0,
+  "interpretation": "Every current-month bill candidate checked against active Silver IDs, trust rules, recurrence, individual-payment medians and forecast dates. Same-day repeats are flagged, never silently deleted. Monthly totals are diagnostic only; no contractual recurrence or future charge is externally verified.",
+  "recurrence_evidence_counts": {
+    "HISTORICAL_CONSECUTIVE_ONLY": 0,
+    "MONTHLY_CANDIDATE_INSUFFICIENT_HISTORY": 120,
+    "RECENT_CONSECUTIVE_MONTHS": 6561
+  },
+  "same_day_same_amount_extra_payments": 267,
+  "same_day_same_amount_payment_groups": 267,
+  "validation_status": "PASSED"
+}

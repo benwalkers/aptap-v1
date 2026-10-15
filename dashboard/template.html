@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ApTap | Risk & Inference Intelligence</title>
+<style>
+:root {color-scheme:light;--ink:#112941;--text:#2f455f;--muted:#667b92;--line:#e3ebf3;--paper:#fff;--bg:#f3f7fc;--navy:#132c47;--teal:#078e88;--amber:#f2a93b;--red:#d65b61;--blue:#397dce;--violet:#7358c8}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}button,select,input{font:inherit}button{cursor:pointer}
+header{background:linear-gradient(125deg,#122b45,#244d70);color:#fff;padding:29px max(4vw,24px) 26px}header h1{font-size:clamp(23px,3vw,36px);margin:4px 0 5px;letter-spacing:-1px}header p{font-size:13px;color:#cad9e8;margin:3px 0;max-width:920px}header .tag{font-size:10px;text-transform:uppercase;letter-spacing:2px;color:#7de0d5;font-weight:800}
+main{max-width:1360px;margin:0 auto;padding:23px 24px 48px}.toolbar{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;margin-bottom:17px}.controls{display:flex;align-items:center;gap:8px;flex-wrap:wrap}label{font-size:12px;color:var(--muted);font-weight:700}select,input{background:#fff;border:1px solid #c9d6e5;border-radius:9px;padding:10px;color:var(--ink);min-width:135px}
+.tabs{display:flex;flex-wrap:wrap;gap:7px}.tab{border:1px solid #c9d6e5;background:#fff;padding:10px 15px;color:#42627b;border-radius:9px;font-size:12px;font-weight:750}.tab.active{background:var(--navy);border-color:var(--navy);color:#fff}.grid{display:grid;gap:15px}.kpis{grid-template-columns:repeat(4,minmax(0,1fr));margin-bottom:16px}.card,.panel{background:var(--paper);border:1px solid var(--line);border-radius:15px;box-shadow:0 5px 20px #19334d09}.card{padding:19px}.card .value{font-size:clamp(22px,2.4vw,32px);font-weight:800;line-height:1.24;letter-spacing:-.6px}.card .label{color:var(--muted);font-size:12px;margin-bottom:5px}.card .sub{color:var(--muted);font-size:10px;margin-top:7px}.card.flag .value{color:#b8534f}.panel{padding:20px;margin-bottom:16px}.panel h2{margin:0 0 6px;font-size:17px}.panel p,.note{margin:6px 0 13px;color:var(--muted);font-size:12px;line-height:1.5}.two{grid-template-columns:1.15fr 1fr}.three{grid-template-columns:1fr 1fr 1fr}.chart{height:310px;width:100%}.legend{display:flex;gap:15px;flex-wrap:wrap;font-size:11px;color:#5a6f84}.dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:5px}.table-wrap{max-height:390px;overflow:auto;border:1px solid var(--line);border-radius:9px}table{width:100%;border-collapse:collapse;min-width:680px;font-size:11px}thead{position:sticky;top:0;background:#eaf1f8;z-index:1}th,td{text-align:left;padding:10px 12px;border-bottom:1px solid #eef1f5}th{color:#314b65;font-weight:750}tr:hover td{background:#f6fafc}.risk-high{color:#b5343e;font-weight:800}.risk-medium{color:#bc7b08;font-weight:800}.risk-low_to_medium{color:#16817c;font-weight:750}.risk-unassessed{color:#884bc5;font-weight:800}.pill{display:inline-block;border-radius:20px;padding:4px 8px;font-weight:750;font-size:10px}.pill.pass{color:#0d7a68;background:#e2f5ef}.pill.review{color:#ae3e42;background:#fff0ee}.hint{font-size:11px;padding:12px 15px;background:#e8f1fb;border-left:4px solid var(--blue);border-radius:8px;margin:10px 0 18px}.warn{background:#fff2df;border-left-color:var(--amber)}.muted{color:var(--muted)}.hidden{display:none!important}.footer{font-size:11px;color:#6f8296;margin-top:18px}#merchantSearch{flex:1;min-width:230px}#reviewTableTitle{margin-bottom:12px}
+@media(max-width:900px){.kpis,.two,.three{grid-template-columns:1fr 1fr}.chart{height:280px}}@media(max-width:570px){main{padding:15px}.kpis,.two,.three{grid-template-columns:1fr}.controls{width:100%}header{padding:20px}.panel{padding:14px}}
+</style></head>
+<body><header><div class="tag">ApTap · Data Engineering Assessment · Offline Analytics</div><h1>Classification Risk &amp; Commercial Intelligence</h1><p>Follow transactions from source ingestion to trusted classifications, compare TF-IDF and MiniLM diagnostic predictions, and test the sensitivity of downstream bill and switch results.</p><p id="metadata"></p></header>
+<main>
+<div class="toolbar">
+  <nav class="tabs" aria-label="Dashboard views"><button class="tab active" data-view="funnel">Data quality funnel</button><button class="tab" data-view="inference">ML inference</button><button class="tab" data-view="risk">Risk &amp; review</button><button class="tab" data-view="business">Commercial sensitivity</button></nav>
+  <div class="controls"><label for="month">Month</label><select id="month"></select><label for="basis">Classification cohort</label><select id="basis"><option value="source">Source delivery</option><option value="booking">Booking month</option></select></div>
+</div>
+<div class="grid kpis" id="kpis"></div>
+<div id="view-funnel">
+ <div class="hint" id="funnelExplain">Raw and rejected are measured by source delivery period; selecting booking month changes the classification cohort, not the bank's source-file reconciliation.</div>
+ <div class="grid two"><section class="panel"><h2>Ingestion → active transactions</h2><p id="funnelSubtitle"></p><div class="chart" id="funnelChart"></div></section>
+ <section class="panel"><h2>Classification coverage</h2><p>Trusted demo aliases vs provisional scored categories. Both still have a ten-category prediction.</p><div class="chart" id="coverageChart"></div></section></div>
+ <section class="panel"><h2>Where classification risk concentrates</h2><p>Audit tiers are qualitative governance judgements, not model confidence probabilities.</p><div class="chart" id="riskChart"></div></section>
+</div>
+<div id="view-inference" class="hidden">
+ <div class="hint">MiniLM is a <strong>diagnostic second opinion</strong>. It has <strong>zero voting weight</strong> in the final category. When the optional offline model is not enabled, its comparison fields are shown as not run. Agreement never auto-approves a merchant.</div>
+ <div class="grid two"><section class="panel"><h2>Model agreement on unresolved descriptions</h2><p id="inferenceDetail"></p><div class="chart" id="agreementChart"></div></section>
+ <section class="panel"><h2>Evaluation boundary</h2><p>The 57-labelled-description leave-one-description-out benchmark is exploratory, not a production holdout or a calibrated classifier confidence measurement.</p><div class="chart" id="modelScoreChart"></div></section></div>
+ <section class="panel"><h2>Candidate-level model comparison</h2><p>Similarity scores from character TF-IDF and MiniLM are <strong>not directly comparable</strong> as probabilities.</p><div class="table-wrap"><table><thead><tr><th>Description</th><th>Risk</th><th>TF-IDF candidate / score</th><th>MiniLM candidate / score</th><th>Agreement</th><th>Final category</th><th>Current policy</th></tr></thead><tbody id="modelTable"></tbody></table></div></section>
+</div>
+<div id="view-risk" class="hidden">
+ <div class="hint warn">Priority is driven by transaction exposure and ambiguity. <strong>High-risk but accepted aliases</strong> are explicitly surfaced; the dashboard does not automatically revoke or approve them. Debit exposure means payment volume, <strong>not financial loss</strong>.</div>
+ <div class="grid two"><section class="panel"><h2>Risk-tier distribution</h2><div class="chart" id="riskDonut"></div></section><section class="panel"><h2>Unreviewed acceptance exposure</h2><p id="highAcceptedText"></p><div class="chart" id="exposureChart"></div></section></div>
+ <section class="panel"><h2 id="reviewTableTitle">Merchant drill-down</h2><div class="controls" style="margin:12px 0"><input id="merchantSearch" aria-label="Search descriptions" placeholder="Search merchant / payment description"><label for="riskFilter">Risk tier</label><select id="riskFilter"><option value="all">All</option><option value="high">High</option><option value="medium">Medium</option><option value="low_to_medium">Low–medium demo</option><option value="unassessed">Unassessed</option></select><label for="reviewFilter">Decision</label><select id="reviewFilter"><option value="all">All</option><option value="review">Needs review</option><option value="accepted">Demo accepted</option></select></div><div class="table-wrap"><table><thead><tr><th>Merchant description</th><th>Transactions</th><th>Customers</th><th>Debit volume</th><th>Risk</th><th>Category</th><th>Decision</th></tr></thead><tbody id="merchantTable"></tbody></table></div><p id="tableCount" class="note"></p></section>
+</div>
+<div id="view-business" class="hidden">
+ <div class="hint">Commercial comparisons are filtered by the <strong>first month with the new provider</strong>, not by source delivery or booking month. Policy sensitivity is a <strong>whole-dataset shadow scenario through the report cut-off</strong>; it is not month-specific.</div>
+ <div class="grid two"><section class="panel"><h2>Observed payment differences among switch candidates</h2><p id="commercialText"></p><div class="chart" id="commercialChart"></div></section><section class="panel"><h2>Baseline vs conservative merchant acceptance</h2><p>Scenario removes two unverified Admiral insurance product mappings from trusted bill features. No bank data or active alias registry is modified.</p><div class="chart" id="policyChart"></div></section></div>
+ <section class="panel"><h2>How to interpret impact</h2><p id="policyText"></p><p>Lower new payments are <strong>not verified savings</strong>. The switch candidates are not externally confirmed. Removing candidate bills does not prove they were false positives. Human review should be prioritised by missing product evidence and the number of affected transactions, not a claimed financial loss.</p></section>
+</div>
+<div class="footer">Source: incremental SQLite Silver, read-only merchant governance audit, model retrieval diagnostics, and governed Gold CSVs. Self-contained Plotly.js, no external network, no customer/transaction IDs embedded in this dashboard. Synthetic sample — not a bank-approved production classification system.</div>
+</main>
+<script>__EMBEDDED_PLOTLY__</script>
+<script id="dashboard-data" type="application/json">__DASHBOARD_DATA__</script>
+<script>
+(()=>{
+'use strict';
+const data=JSON.parse(document.getElementById('dashboard-data').textContent);
+const el=id=>document.getElementById(id);
+const fmt=n=>Number(n||0).toLocaleString('en-GB');
+const gbp=n=>'£'+Number(n||0).toLocaleString('en-GB',{maximumFractionDigits:0});
+const pct=(n,d)=>d?((n/d)*100).toFixed(1)+'%':'0.0%';
+const colors={high:'#d65b61',medium:'#f2a93b',low_to_medium:'#078e88',unassessed:'#7358c8',accepted:'#078e88',review:'#d65b61'};
+const layout={margin:{l:92,r:28,t:18,b:50},paper_bgcolor:'#fff',plot_bgcolor:'#fff',font:{family:'Inter,Arial,sans-serif',color:'#4d6278',size:12},showlegend:false};
+const cfg={responsive:true,displaylogo:false,modeBarButtonsToRemove:['lasso2d','select2d','toggleSpikelines']};
+let active='funnel';
+for(const m of data.months){const opt=document.createElement('option');opt.value=m;opt.textContent=m;el('month').append(opt)}
+el('month').value=data.metadata.as_of.slice(0,7);
+if(!data.months.includes(el('month').value))el('month').value=data.months.at(-1)||'';
+el('metadata').textContent=`Cut-off ${data.metadata.as_of} · ${data.metadata.model_mode} · No external services or customer-level identifiers`;
+function R(){return data.classification[el('basis').value]?.[el('month').value]||{active_clean:0,accepted:0,needs_review:0,accepted_high_risk:0,high:0,medium:0,low_to_medium:0,unassessed:0,review_debit_volume_gbp:0,high_risk_accepted_debit_volume_gbp:0}}
+function plot(id,traces,opts={}){Plotly.react(el(id),traces,{...layout,...opts},cfg)}
+function card(label,value,detail,flag=false){return `<div class="card ${flag?'flag':''}"><div class="label">${label}</div><div class="value">${value}</div><div class="sub">${detail}</div></div>`}
+function topKpis(r){const f=data.source_funnel[el('month').value]||{raw:0,rejected:0,active:0};el('kpis').innerHTML=
+ card('Raw feed rows',fmt(f.raw),'Source delivery period')+
+ card('Active clean rows',fmt(r.active_clean),el('basis').value==='source'?'In this source cohort':'Booked in selected month')+
+ card('Trusted demo-accepted',pct(r.accepted,r.active_clean),`${fmt(r.accepted)} transaction occurrences`)+
+ card('Review exposure',pct(r.needs_review,r.active_clean),`${fmt(r.needs_review)} transaction occurrences`,true);
+}
+function funnel(r){const f=data.source_funnel[el('month').value]||{raw:0,rejected:0,active:0,reconciliation_gap:0};
+ el('funnelSubtitle').textContent=`Source period ${el('month').value}: ${fmt(f.raw)} raw, ${fmt(f.rejected)} rejected/superseded, ${fmt(f.active)} currently attributed to this source period. Reconciliation gap: ${fmt(f.reconciliation_gap)}.`;
+ plot('funnelChart',[{type:'bar',orientation:'h',y:['Raw source rows','Active after cleaning'],x:[f.raw,f.active],marker:{color:['#397dce','#078e88']},text:[fmt(f.raw),fmt(f.active)],textposition:'outside',hovertemplate:'%{y}: %{x:,}<extra></extra>'}],{margin:{l:155,r:45,t:18,b:40},xaxis:{rangemode:'tozero'},yaxis:{autorange:'reversed'}});
+ plot('coverageChart',[{type:'pie',hole:.67,values:[r.accepted,r.needs_review],labels:['Demo-accepted','Needs review'],marker:{colors:[colors.accepted,colors.review]},textinfo:'percent',hovertemplate:'%{label}: %{value:,} (%{percent})<extra></extra>'}],{margin:{l:20,r:20,t:5,b:15},showlegend:true,legend:{orientation:'h',y:-.12}});
+ plot('riskChart',[{type:'bar',orientation:'h',y:['Qualitative audit tier'],x:[r.low_to_medium],name:'Low–medium demo',marker:{color:colors.low_to_medium}},
+ {type:'bar',orientation:'h',y:['Qualitative audit tier'],x:[r.medium],name:'Medium',marker:{color:colors.medium}},
+ {type:'bar',orientation:'h',y:['Qualitative audit tier'],x:[r.high],name:'High',marker:{color:colors.high}},
+ {type:'bar',orientation:'h',y:['Qualitative audit tier'],x:[r.unassessed],name:'Unassessed',marker:{color:colors.unassessed}}],{barmode:'stack',showlegend:true,legend:{orientation:'h',y:-.35},margin:{l:170,r:20,t:10,b:75},height:170});
+}
+function risk(r){plot('riskDonut',[{type:'pie',hole:.60,values:[r.high,r.medium,r.low_to_medium,r.unassessed],labels:['High','Medium','Low–medium demo','Unassessed'],marker:{colors:[colors.high,colors.medium,colors.low_to_medium,colors.unassessed]},textinfo:'percent',hovertemplate:'%{label}: %{value:,} (%{percent})<extra></extra>'}],{margin:{l:15,r:15,t:10,b:30},showlegend:true,legend:{orientation:'h',y:-.12}});
+ el('highAcceptedText').textContent=`${fmt(r.accepted_high_risk)} high-risk accepted transaction occurrences; ${gbp(r.high_risk_accepted_debit_volume_gbp)} observed debits. Separately, ${fmt(r.needs_review)} need review (${gbp(r.review_debit_volume_gbp)} debits). Debit volume is not financial loss.`;
+ plot('exposureChart',[{type:'bar',x:['Needs review','High-risk but accepted'],y:[r.needs_review,r.accepted_high_risk],marker:{color:[colors.medium,colors.high]},text:[fmt(r.needs_review),fmt(r.accepted_high_risk)],textposition:'outside',hovertemplate:'%{x}: %{y:,}<extra></extra>'}],{margin:{l:55,r:20,t:20,b:80},yaxis:{rangemode:'tozero'}});
+ const q=el('merchantSearch').value.trim().toUpperCase();const tier=el('riskFilter').value;const decision=el('reviewFilter').value;
+ const list=(data.merchant_drilldown[el('basis').value]?.[el('month').value]||[]).filter(x=>
+ x.description.includes(q)&&(tier==='all'||x.risk_tier===tier)&&(decision==='all'||(decision==='review'?x.review:x.accepted)));
+ el('merchantTable').replaceChildren();for(const x of list){const tr=document.createElement('tr');const values=[x.description,fmt(x.transactions),fmt(x.customers),gbp(x.debit_volume_gbp),x.risk_tier.replaceAll('_',' '),x.category,x.accepted?'DEMO ACCEPTED':'REVIEW'];for(let i=0;i<values.length;i++){const td=document.createElement('td');td.textContent=values[i];if(i===4)td.className='risk-'+x.risk_tier;tr.append(td)}el('merchantTable').append(tr)}
+ el('tableCount').textContent=`Showing ${list.length} merchant descriptions in the selected ${el('basis').value} cohort (aggregated; no individual customer IDs).`;
+}
+function inference(){const rows=data.model_comparison.filter(x=>x.needs_review||x.risk_tier==='high');const compared=rows.filter(x=>x.model_agreement!=='NOT_RUN');const agrees=compared.filter(x=>x.model_agreement==='AGREE');const disagree=compared.filter(x=>x.model_agreement==='DISAGREE');const unrun=rows.filter(x=>x.model_agreement==='NOT_RUN');
+ el('inferenceDetail').textContent=`${compared.length} cases compared, ${agrees.length} agreements, ${disagree.length} disagreements, ${unrun.length} without MiniLM diagnostics. Scores are uncalibrated retrieval similarities.`;
+ plot('agreementChart',[{type:'bar',x:['Agree','Disagree','Not run'],y:[agrees.length,disagree.length,unrun.length],marker:{color:['#078e88','#d65b61','#b7c8d9']},text:[agrees.length,disagree.length,unrun.length],textposition:'outside'}],{margin:{l:55,r:25,t:10,b:60},yaxis:{rangemode:'tozero'}});
+ const bench=data.benchmark||[];const blabel=[];const bvalue=[];const bcolor=[];
+ for(const b of bench){for(const [label,key] of [['accuracy','top1_accuracy'],['macro F1','top1_macro_f1'],['macro AP','macro_average_precision']]){blabel.push((b.model==='char_tfidf'?'TF-IDF':b.model)+' '+label);bvalue.push(b[key]);bcolor.push(b.model==='char_tfidf'?'#078e88':'#397dce')}}
+ if(blabel.length)plot('modelScoreChart',[{type:'bar',orientation:'h',x:bvalue,y:blabel,marker:{color:bcolor},text:bvalue.map(x=>Number(x).toFixed(3)),textposition:'outside'}],{margin:{l:145,r:40,t:10,b:35},xaxis:{range:[0,1]},yaxis:{autorange:'reversed'}});
+ else plot('modelScoreChart',[{type:'bar',x:['Evaluation not generated'],y:[0]}],{annotations:[{text:'Run step 14 first',showarrow:false,xref:'paper',yref:'paper',x:.5,y:.5}]});
+ el('modelTable').replaceChildren();for(const x of rows.sort((a,b)=>b.transactions-a.transactions)){const tr=document.createElement('tr');const values=[x.description,x.risk_tier.replaceAll('_',' '),`${x.lexical_category||'not run'} ${x.lexical_score!==''?'('+x.lexical_score+')':''}`,`${x.minilm_category||'not run'} ${x.minilm_score!==''?'('+x.minilm_score+')':''}`,x.model_agreement,x.final_category,x.accepted?'DEMO ACCEPTED':'REVIEW'];for(let i=0;i<values.length;i++){const td=document.createElement('td');td.textContent=values[i];if(i===1)td.className='risk-'+x.risk_tier;tr.append(td)}el('modelTable').append(tr)}
+}
+function business(){const m=el('month').value;const rows=data.commercial.filter(x=>x.first_new_month===m);const n=rows.reduce((n,r)=>n+r.comparisons,0);const positive=rows.reduce((n,r)=>n+r.lower_new,0);el('commercialText').textContent=`${fmt(n)} candidate new-provider starts in ${m}; ${fmt(positive)} have lower observed new payments (${pct(positive,n)}). No switches or savings externally verified.`;
+ if(rows.length){plot('commercialChart',[{type:'bar',x:rows.map(x=>x.category),y:rows.map(x=>x.share_lower_pct),marker:{color:'#397dce'},text:rows.map(x=>`${x.share_lower_pct.toFixed(1)}% · n=${x.comparisons}`),textposition:'outside',hovertemplate:'%{x}: %{y:.1f}%<extra></extra>'}],{margin:{l:55,r:30,t:10,b:70},yaxis:{range:[0,105],title:'Lower new payments (%)'}})}else{plot('commercialChart',[{type:'bar',x:['No candidate first-new month'],y:[0],marker:{color:'#b6c8da'}}],{annotations:[{text:'No candidates start in this month',showarrow:false,xref:'paper',yref:'paper',x:.5,y:.6}]})}
+ const p=data.policy;const base=p.baseline||{},cons=p.conservative||{};
+ plot('policyChart',[{type:'bar',name:'Current policy',x:['Bill candidates','Switch candidates'],y:[base.bill_candidates||0,base.switch_candidates||0],marker:{color:'#397dce'}},{type:'bar',name:'Conservative policy',x:['Bill candidates','Switch candidates'],y:[cons.bill_candidates||0,cons.switch_candidates||0],marker:{color:'#078e88'}}],{barmode:'group',showlegend:true,legend:{orientation:'h',y:-.24},margin:{l:70,r:10,t:20,b:75},yaxis:{rangemode:'tozero'}});
+ el('policyText').textContent=`Through ${p.as_of||data.metadata.as_of}: bill candidates ${fmt(base.bill_candidates)} → ${fmt(cons.bill_candidates)} (${fmt((cons.bill_candidates||0)-(base.bill_candidates||0))} change); switch candidates ${fmt(base.switch_candidates)} → ${fmt(cons.switch_candidates)}. This is a whole-period shadow test, not evidence of improved classification accuracy.`;
+}
+function render(){const r=R();topKpis(r);if(active==='funnel')funnel(r);else if(active==='risk')risk(r);else if(active==='inference')inference();else business()}
+for(const tab of document.querySelectorAll('[data-view]'))tab.addEventListener('click',()=>{active=tab.dataset.view;document.querySelectorAll('[data-view]').forEach(t=>t.classList.toggle('active',t===tab));for(const name of ['funnel','inference','risk','business'])el('view-'+name).classList.toggle('hidden',name!==active);render()});
+for(const id of ['month','basis','merchantSearch','riskFilter','reviewFilter'])el(id).addEventListener(id==='merchantSearch'?'input':'change',()=>{if(['merchantSearch','riskFilter','reviewFilter'].includes(id) && active!=='risk')return;render()});
+render();
+})();
+</script>
+</body></html>

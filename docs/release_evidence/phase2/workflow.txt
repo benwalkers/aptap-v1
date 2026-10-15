@@ -1,0 +1,68 @@
+
+===== ApTap Release 2 | end-to-end from clean inputs =====
+
+===== 01 | Read-only EDA: date formats, source periods and SHA-256 =====
+transactions_2026_07.csv [csv_v1]: 43,415 records, booking months {'2026-07': 43415}, issues {}
+transactions_2026_08.csv [csv_v1]: 46,790 records, booking months {'2026-07': 1052, '2026-08': 45738}, issues {'cross_period_booking_date': 1052}
+transactions_2026_09.jsonl [jsonl_v2]: 44,950 records, booking months {'2026-09': 44950}, issues {}
+Input EDA: outputs/source_eda.json
+
+===== 03 | Incremental ingest -> canonical Silver -> classification -> bills/switches -> report =====
+RECONCILIATION: 135,155 = 133,692 clean + 1,463 rejected
+Batch actions: [('transactions_2026_07.csv', 'COMMITTED'), ('transactions_2026_08.csv', 'COMMITTED'), ('transactions_2026_09.jsonl', 'COMMITTED')]
+Flagged for review: 21/92 descriptors, 15,033 transaction occurrences
+Bills (candidates): 6,681; switches (candidates): 209
+Bill evidence verified: PASSED | {'RECENT_CONSECUTIVE_MONTHS': 6561, 'HISTORICAL_CONSECUTIVE_ONLY': 0, 'MONTHLY_CANDIDATE_INSUFFICIENT_HISTORY': 120} | monthly-total outliers: 7
+Switch evidence verified: PASSED | {'PROVISIONAL': 87, 'REPEATED_NEW_PROVIDER': 122, 'SUPPORTED_PAYMENT_PATTERN': 0} | externally confirmed: 0
+Runtime 8.842s; peak RSS 64.4 MiB
+Outputs: /private<ISOLATED_PROJECT>/outputs | report: report/one_page_report.html
+
+===== 04 | Standalone merchant categoriser (input + category output + reviews) =====
+Wrote outputs/examples_categorised.csv; unresolved occurrences 2 (provisional ten-class predictions, with review flags)
+
+===== 05 | Exploratory leave-one-description-out classifier benchmark =====
+char_tfidf 0.789 0.635
+
+Benchmark: outputs/classifier_benchmark.json
+
+===== 12 | Audit 92 merchant descriptors and produce read-only governance proposals =====
+AUDITED 92 descriptors, 133,692 clean transactions
+REVIEW REQUIRED 21 descriptions / 15,033 transaction occurrences
+ADDITIONAL RISK 2 accepted demo mappings / 851 transactions
+CONSERVATIVE PROPOSAL 23 review-required / 15,884 transactions
+NO NEW AUTO-APPROVALS. Proposals written to outputs/merchant_governance
+
+===== 13 | Compare current demo registry with conservative proposal without changing SQLite =====
+BASELINE {'bill_candidates': 6681, 'switch_candidates': 209, 'review_descriptors': 21}
+CONSERVATIVE {'bill_candidates': 6401, 'switch_candidates': 209, 'review_descriptors': 23}
+DELTA {'bill_candidates': -280, 'switch_candidates': 0}
+No source data or curated aliases modified.
+
+===== 14 | Exploratory PR curves, per-category AP and top-1 F1 =====
+Matplotlib is building the font cache; this may take a moment.
+char_tfidf: top1_accuracy=0.789, macro_F1=0.635, macro_AP=0.698
+Outputs: /private<ISOLATED_PROJECT>/outputs/pr_evaluation
+Results: outputs/pr_evaluation/
+
+===== 15 | Offline commercial and inference-risk reports (read-only) =====
+DASHBOARD: /private<ISOLATED_PROJECT>/report/risk_dashboard.html | 3 months | 92 descriptors | MiniLM diagnostics=False | zero external resources
+One-page commercial report: report/one_page_report.html
+Interactive dashboard: report/risk_dashboard.html
+
+===== 02 | Full local regression suite (ingestion, CDC, governance, packaging) =====
+......................................................                   [100%]
+54 passed in 0.59s
+
+===== 06 | Verify rerun idempotency, checkpoint and 4 required CSV hashes =====
+RECONCILIATION: 135,155 = 133,692 clean + 1,463 rejected
+Batch actions: [('transactions_2026_07.csv', 'SKIPPED_IDENTICAL'), ('transactions_2026_08.csv', 'SKIPPED_IDENTICAL'), ('transactions_2026_09.jsonl', 'SKIPPED_IDENTICAL')]
+Flagged for review: 21/92 descriptors, 15,033 transaction occurrences
+Bills (candidates): 6,681; switches (candidates): 209
+Bill evidence verified: PASSED | {'RECENT_CONSECUTIVE_MONTHS': 6561, 'HISTORICAL_CONSECUTIVE_ONLY': 0, 'MONTHLY_CANDIDATE_INSUFFICIENT_HISTORY': 120} | monthly-total outliers: 7
+Switch evidence verified: PASSED | {'PROVISIONAL': 87, 'REPEATED_NEW_PROVIDER': 122, 'SUPPORTED_PAYMENT_PATTERN': 0} | externally confirmed: 0
+Runtime 3.146s; peak RSS 73.0 MiB
+Outputs: /private<ISOLATED_PROJECT>/outputs | report: report/one_page_report.html
+Rerun verification: outputs/workflow_rerun_verification.json
+PASS: 4 CSVs byte-identical; 0 new batches
+
+SUCCESS. Required CSVs are in outputs/; commercial + offline dashboard in report/.

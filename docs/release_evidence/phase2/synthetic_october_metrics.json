@@ -1,0 +1,120 @@
+{
+  "as_of": "2026-10-31",
+  "batch_actions": [
+    {
+      "action": "COMMITTED",
+      "conflicts": 0,
+      "corrected": 0,
+      "duplicates": 515,
+      "file": "transactions_2026_07.csv",
+      "inserted": 42860,
+      "invalid": 40,
+      "rows": 43415,
+      "sha256": "3556efaedf875557c8df8b026195c0115ba0dffc655312851c7c382de0b9c63b"
+    },
+    {
+      "action": "COMMITTED",
+      "conflicts": 0,
+      "corrected": 0,
+      "duplicates": 463,
+      "file": "transactions_2026_08.csv",
+      "inserted": 46327,
+      "invalid": 0,
+      "rows": 46790,
+      "sha256": "7d02fdd2cacb4c324b7a9981e547f5c3b78ce9d4a34f4f50e5bf1bafd5561d24"
+    },
+    {
+      "action": "COMMITTED",
+      "conflicts": 0,
+      "corrected": 0,
+      "duplicates": 445,
+      "file": "transactions_2026_09.jsonl",
+      "inserted": 44505,
+      "invalid": 0,
+      "rows": 44950,
+      "sha256": "6fffeebcb335051b54ce7010173ff80348603f26c68cd091702fac5b9b7dd1ed"
+    },
+    {
+      "action": "COMMITTED",
+      "conflicts": 0,
+      "corrected": 0,
+      "duplicates": 1,
+      "file": "transactions_2026_10.jsonl",
+      "inserted": 1,
+      "invalid": 1,
+      "rows": 3,
+      "sha256": "f2a0058977bf76d2633aea052078790ba67f9db537c34c3c84739de1f92f9d45"
+    }
+  ],
+  "bill_evidence_validation": {
+    "as_of": "2026-10-31",
+    "bills_with_monthly_total_gap_gt_10pct": 0,
+    "bills_with_multiple_payments_in_any_month": 0,
+    "bills_with_same_day_same_amount_payment_groups": 0,
+    "cadence_counts": {
+      "monthly_candidate": 1
+    },
+    "candidate_count": 1,
+    "distinct_supporting_transaction_ids": 1,
+    "externally_verified_recurring_contracts": 0,
+    "interpretation": "Every current-month bill candidate checked against active Silver IDs, trust rules, recurrence, individual-payment medians and forecast dates. Same-day repeats are flagged, never silently deleted. Monthly totals are diagnostic only; no contractual recurrence or future charge is externally verified.",
+    "recurrence_evidence_counts": {
+      "HISTORICAL_CONSECUTIVE_ONLY": 0,
+      "MONTHLY_CANDIDATE_INSUFFICIENT_HISTORY": 1,
+      "RECENT_CONSECUTIVE_MONTHS": 0
+    },
+    "same_day_same_amount_extra_payments": 0,
+    "same_day_same_amount_payment_groups": 0,
+    "validation_status": "PASSED"
+  },
+  "category_summary": [
+    {
+      "bootstrap_ci": null,
+      "category": "energy",
+      "mean_observed_saving": 123.35,
+      "pairs": 1,
+      "provisional_pairs": 1
+    }
+  ],
+  "classification_methods": {
+    "curated_alias": 118660,
+    "lexical_suggestion": 15033
+  },
+  "clean": 133693,
+  "conflicts": 0,
+  "corrected": 0,
+  "duplicates": 1424,
+  "excluded_from_bill_features": 113374,
+  "invalid": 41,
+  "new_batches": 4,
+  "peak_memory_mb": 71.5,
+  "raw": 135158,
+  "recurring_bill_candidates": 1,
+  "rejected": 1465,
+  "review_descriptors": 21,
+  "review_descriptors_count": 21,
+  "runtime_seconds": 8.346,
+  "superseded": 0,
+  "switch_candidates": 1,
+  "switch_evidence_validation": {
+    "candidate_count": 1,
+    "distinct_supporting_transaction_ids": 5,
+    "evidence_counts": {
+      "PROVISIONAL": 1,
+      "REPEATED_NEW_PROVIDER": 0,
+      "SUPPORTED_PAYMENT_PATTERN": 0
+    },
+    "externally_confirmed_switches": 0,
+    "interpretation": "Candidate payment-pattern transitions only. Checked against active Silver IDs, dates, provider/category mappings and medians; no independent contract cancellation or verified savings evidence.",
+    "observed_payment_difference_counts": {
+      "higher_new_payment": 0,
+      "lower_new_payment": 1,
+      "no_change": 0
+    },
+    "validation_status": "PASSED",
+    "verified_customer_savings": 0
+  },
+  "total_unique_descriptors": 92,
+  "unknown_descriptors": 21,
+  "unknown_transaction_count": 15033
+}

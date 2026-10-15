@@ -1,0 +1,65 @@
+{
+  "files": [
+    {
+      "booking_months": {
+        "2026-07": 43415
+      },
+      "declared_period": "2026-07",
+      "fields": [
+        "amount",
+        "booking_date",
+        "currency",
+        "customer_id",
+        "description",
+        "transaction_id"
+      ],
+      "file": "transactions_2026_07.csv",
+      "issues": {},
+      "records": 43415,
+      "schema": "csv_v1",
+      "sha256": "3556efaedf875557c8df8b026195c0115ba0dffc655312851c7c382de0b9c63b"
+    },
+    {
+      "booking_months": {
+        "2026-07": 1052,
+        "2026-08": 45738
+      },
+      "declared_period": "2026-08",
+      "fields": [
+        "amount",
+        "booking_date",
+        "currency",
+        "customer_id",
+        "description",
+        "transaction_id"
+      ],
+      "file": "transactions_2026_08.csv",
+      "issues": {
+        "cross_period_booking_date": 1052
+      },
+      "records": 46790,
+      "schema": "csv_v1",
+      "sha256": "7d02fdd2cacb4c324b7a9981e547f5c3b78ce9d4a34f4f50e5bf1bafd5561d24"
+    },
+    {
+      "booking_months": {
+        "2026-09": 44950
+      },
+      "declared_period": "2026-09",
+      "fields": [
+        "cust_ref",
+        "direction",
+        "narrative",
+        "posted",
+        "txn_id",
+        "value"
+      ],
+      "file": "transactions_2026_09.jsonl",
+      "issues": {},
+      "records": 44950,
+      "schema": "jsonl_v2",
+      "sha256": "6fffeebcb335051b54ce7010173ff80348603f26c68cd091702fac5b9b7dd1ed"
+    }
+  ],
+  "records_total": 135155
+}

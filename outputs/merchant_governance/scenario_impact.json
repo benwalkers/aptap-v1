@@ -1,0 +1,28 @@
+{
+  "as_of": "2026-09-30",
+  "basis": "Scenario simulation on current clean transactions; no bank sign-off or source transaction changes",
+  "baseline": {
+    "bill_candidates": 6681,
+    "switch_candidates": 209,
+    "review_descriptors": 21
+  },
+  "conservative": {
+    "bill_candidates": 6401,
+    "switch_candidates": 209,
+    "review_descriptors": 23
+  },
+  "delta": {
+    "bill_candidates": -280,
+    "switch_candidates": 0
+  },
+  "removed": {
+    "bill_candidates": 280,
+    "switch_candidates": 0
+  },
+  "added": {
+    "bill_candidates": 0,
+    "switch_candidates": 0
+  },
+  "read_only": true,
+  "proposed_change": "Demote two generic Admiral insurance aliases from demo-accepted car_insurance to unknown"
+}

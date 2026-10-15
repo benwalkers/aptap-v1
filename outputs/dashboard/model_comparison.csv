@@ -1,0 +1,93 @@
+description,transactions,risk_tier,existing_status,accepted,needs_review,final_category,lexical_category,lexical_score,minilm_category,minilm_score,model_agreement,decision_group,additional_evidence_needed
+ACME LTD SALARY,2219,low_to_medium,ACCEPTED_DEMO,True,False,not_a_bill,,,,,NOT_RUN,existing_curated_demo,Bank-reviewed alias or source-product evidence before production approval
+ADMIRAL INS DD,389,high,ACCEPTED_DEMO,True,False,car_insurance,car_insurance,1.0,car_insurance,1.0,AGREE,insurance_product_unknown,Policy type or product reference
+ADMIRAL INSURANCE,462,high,ACCEPTED_DEMO,True,False,car_insurance,car_insurance,1.0,car_insurance,1.0,AGREE,insurance_product_unknown,Policy type or product reference
+AMAZON PRIME*,338,medium,REVIEW_REQUIRED,False,True,streaming,streaming,1.0,streaming,1.0,AGREE,prime_bundled_product,Approved taxonomy mapping for bundled membership
+AMAZON.CO.UK*MK3,8288,low_to_medium,ACCEPTED_DEMO,True,False,not_a_bill,,,,,NOT_RUN,existing_curated_demo,Bank-reviewed alias or source-product evidence before production approval
+AMZN MKTP UK,8564,low_to_medium,ACCEPTED_DEMO,True,False,not_a_bill,,,,,NOT_RUN,existing_curated_demo,Bank-reviewed alias or source-product evidence before production approval
+AMZNPRIME UK,302,medium,REVIEW_REQUIRED,False,True,streaming,streaming,1.0,streaming,1.0,AGREE,prime_bundled_product,Approved taxonomy mapping for bundled membership
+ASDA STORES,8584,low_to_medium,ACCEPTED_DEMO,True,False,not_a_bill,,,,,NOT_RUN,existing_curated_demo,Bank-reviewed alias or source-product evidence before production approval
+AVIVA DD,449,high,REVIEW_REQUIRED,False,True,car_insurance,car_insurance,0.6171,car_insurance,0.69205,AGREE,insurance_product_unknown,Policy type or reference
+AVIVA INSURANCE,451,high,REVIEW_REQUIRED,False,True,car_insurance,car_insurance,1.0,car_insurance,1.0,AGREE,insurance_product_unknown,Policy type or reference
+BACS SALARY NORTHWIND,2279,low_to_medium,ACCEPTED_DEMO,True,False,not_a_bill,,,,,NOT_RUN,existing_curated_demo,Bank-reviewed alias or source-product evidence before production approval
+BG ENERGY DD,229,low_to_medium,ACCEPTED_DEMO,True,False,energy,,,,,NOT_RUN,existing_curated_demo,Bank-reviewed alias or source-product evidence before production approval
+BOOTS 1123,8562,low_to_medium,ACCEPTED_DEMO,True,False,not_a_bill,,,,,NOT_RUN,existing_curated_demo,Bank-reviewed alias or source-product evidence before production approval
+BRITISH GAS,221,low_to_medium,ACCEPTED_DEMO,True,False,energy,,,,,NOT_RUN,existing_curated_demo,Bank-reviewed alias or source-product evidence before production approval
+BRITISH GAS SERVICES,271,high,REVIEW_REQUIRED,False,True,energy,energy,0.9221,energy,0.79415,AGREE,service_product_unknown,Product/contract service code
+BT BROADBAND DD,201,low_to_medium,ACCEPTED_DEMO,True,False,broadband,,,,,NOT_RUN,existing_curated_demo,Bank-reviewed alias or source-product evidence before production approval
+BT GROUP PLC,220,high,REVIEW_REQUIRED,False,True,gym,gym,0.5333,broadband,0.70418,DISAGREE,telecom_product_unknown,Telecom product/payment reference
+BTGROUP*BB 0800,242,low_to_medium,ACCEPTED_DEMO,True,False,broadband,,,,,NOT_RUN,existing_curated_demo,Bank-reviewed alias or source-product evidence before production approval
+CARD PAYMENT TO JOHN S,8605,high,REVIEW_REQUIRED,False,True,water,water,0.2834,home_insurance,0.21337,DISAGREE,counterparty_unknown,"Counterparty ID, MCC/payment-purpose evidence"
+CROYDON COUNCIL,807,medium,REVIEW_REQUIRED,False,True,council_tax,council_tax,1.0,council_tax,1.0,AGREE,council_payment_unknown,"Council-tax reference, payment scheme or service code"
+DELIVEROO,8386,low_to_medium,ACCEPTED_DEMO,True,False,not_a_bill,,,,,NOT_RUN,existing_curated_demo,Bank-reviewed alias or source-product evidence before production approval
+DIRECT LINE INS,508,high,REVIEW_REQUIRED,False,True,home_insurance,home_insurance,1.0,home_insurance,1.0,AGREE,insurance_product_unknown,Policy type or reference
+DIRECTLINE DD,445,high,REVIEW_REQUIRED,False,True,home_insurance,home_insurance,0.7796,home_insurance,0.63168,AGREE,insurance_product_unknown,Policy type or reference
+DISNEY PLUS,478,low_to_medium,ACCEPTED_DEMO,True,False,streaming,,,,,NOT_RUN,existing_curated_demo,Bank-reviewed alias or source-product evidence before production approval
+DISNEYPLUS,482,low_to_medium,ACCEPTED_DEMO,True,False,streaming,,,,,NOT_RUN,existing_curated_demo,Bank-reviewed alias or source-product evidence before production approval
+E ON NEXT DD,285,low_to_medium,ACCEPTED_DEMO,True,False,energy,,,,,NOT_RUN,existing_curated_demo,Bank-reviewed alias or source-product evidence before production approval
+E.ON NEXT,285,low_to_medium,ACCEPTED_DEMO,True,False,energy,,,,,NOT_RUN,existing_curated_demo,Bank-reviewed alias or source-product evidence before production approval
+EDF DD,307,low_to_medium,ACCEPTED_DEMO,True,False,energy,,,,,NOT_RUN,existing_curated_demo,Bank-reviewed alias or source-product evidence before production approval
+EDF ENERGY,262,low_to_medium,ACCEPTED_DEMO,True,False,energy,,,,,NOT_RUN,existing_curated_demo,Bank-reviewed alias or source-product evidence before production approval
+EDF ENERGY CUSTOMERS,233,low_to_medium,ACCEPTED_DEMO,True,False,energy,,,,,NOT_RUN,existing_curated_demo,Bank-reviewed alias or source-product evidence before production approval
+EE & T-MOBILE,233,low_to_medium,ACCEPTED_DEMO,True,False,mobile,,,,,NOT_RUN,existing_curated_demo,Bank-reviewed alias or source-product evidence before production approval
+EE LIMITED,183,medium,REVIEW_REQUIRED,False,True,mobile,mobile,1.0,mobile,1.0,AGREE,telecom_product_unknown,Product reference or bank-verified rule
+EE MOBILE DD,243,low_to_medium,ACCEPTED_DEMO,True,False,mobile,,,,,NOT_RUN,existing_curated_demo,Bank-reviewed alias or source-product evidence before production approval
+EON NEXT ENERGY,242,low_to_medium,ACCEPTED_DEMO,True,False,energy,,,,,NOT_RUN,existing_curated_demo,Bank-reviewed alias or source-product evidence before production approval
+GIFFGAFF,304,low_to_medium,ACCEPTED_DEMO,True,False,mobile,,,,,NOT_RUN,existing_curated_demo,Bank-reviewed alias or source-product evidence before production approval
+GIFFGAFF.COM,400,low_to_medium,ACCEPTED_DEMO,True,False,mobile,,,,,NOT_RUN,existing_curated_demo,Bank-reviewed alias or source-product evidence before production approval
+GYM GROUP LTD,340,low_to_medium,ACCEPTED_DEMO,True,False,gym,,,,,NOT_RUN,existing_curated_demo,Bank-reviewed alias or source-product evidence before production approval
+HUTCHISON 3G UK,242,low_to_medium,ACCEPTED_DEMO,True,False,mobile,,,,,NOT_RUN,existing_curated_demo,Bank-reviewed alias or source-product evidence before production approval
+HYPEROPTIC LTD,308,low_to_medium,ACCEPTED_DEMO,True,False,broadband,,,,,NOT_RUN,existing_curated_demo,Bank-reviewed alias or source-product evidence before production approval
+HYPEROPTIC*FIBRE,408,low_to_medium,ACCEPTED_DEMO,True,False,broadband,,,,,NOT_RUN,existing_curated_demo,Bank-reviewed alias or source-product evidence before production approval
+LB HACKNEY CTAX,763,low_to_medium,ACCEPTED_DEMO,True,False,council_tax,,,,,NOT_RUN,existing_curated_demo,Bank-reviewed alias or source-product evidence before production approval
+LBTH COUNCIL TAX,749,low_to_medium,ACCEPTED_DEMO,True,False,council_tax,,,,,NOT_RUN,existing_curated_demo,Bank-reviewed alias or source-product evidence before production approval
+LIVERPOOL VICTORIA,259,high,REVIEW_REQUIRED,False,True,not_a_bill,not_a_bill,0.3669,council_tax,0.44316,DISAGREE,insurance_product_unknown,Policy type or insurance product code
+LV INSURANCE,283,high,REVIEW_REQUIRED,False,True,home_insurance,home_insurance,1.0,home_insurance,1.0,AGREE,insurance_product_unknown,Policy type or reference
+LV= DD,313,high,REVIEW_REQUIRED,False,True,home_insurance,home_insurance,0.3813,home_insurance,0.60737,AGREE,insurance_product_unknown,Policy type or reference
+NETFLIX,400,low_to_medium,ACCEPTED_DEMO,True,False,streaming,,,,,NOT_RUN,existing_curated_demo,Bank-reviewed alias or source-product evidence before production approval
+NETFLIX.COM,476,low_to_medium,ACCEPTED_DEMO,True,False,streaming,,,,,NOT_RUN,existing_curated_demo,Bank-reviewed alias or source-product evidence before production approval
+O2,282,low_to_medium,ACCEPTED_DEMO,True,False,mobile,,,,,NOT_RUN,existing_curated_demo,Bank-reviewed alias or source-product evidence before production approval
+O2 UK DD,227,low_to_medium,ACCEPTED_DEMO,True,False,mobile,,,,,NOT_RUN,existing_curated_demo,Bank-reviewed alias or source-product evidence before production approval
+OCTOPUS ENERGY,263,low_to_medium,ACCEPTED_DEMO,True,False,energy,,,,,NOT_RUN,existing_curated_demo,Bank-reviewed alias or source-product evidence before production approval
+OCTOPUS ENERGY LTD,304,low_to_medium,ACCEPTED_DEMO,True,False,energy,,,,,NOT_RUN,existing_curated_demo,Bank-reviewed alias or source-product evidence before production approval
+OCTOPUSENERGY DD,245,low_to_medium,ACCEPTED_DEMO,True,False,energy,,,,,NOT_RUN,existing_curated_demo,Bank-reviewed alias or source-product evidence before production approval
+OVO ENERGY,368,low_to_medium,ACCEPTED_DEMO,True,False,energy,,,,,NOT_RUN,existing_curated_demo,Bank-reviewed alias or source-product evidence before production approval
+OVO ENERGY LTD DD,353,low_to_medium,ACCEPTED_DEMO,True,False,energy,,,,,NOT_RUN,existing_curated_demo,Bank-reviewed alias or source-product evidence before production approval
+PLUSNET DD,351,low_to_medium,ACCEPTED_DEMO,True,False,broadband,,,,,NOT_RUN,existing_curated_demo,Bank-reviewed alias or source-product evidence before production approval
+PLUSNET PLC,291,low_to_medium,ACCEPTED_DEMO,True,False,broadband,,,,,NOT_RUN,existing_curated_demo,Bank-reviewed alias or source-product evidence before production approval
+PRET A MANGER,8502,low_to_medium,ACCEPTED_DEMO,True,False,not_a_bill,,,,,NOT_RUN,existing_curated_demo,Bank-reviewed alias or source-product evidence before production approval
+PRIME VIDEO,320,low_to_medium,ACCEPTED_DEMO,True,False,streaming,,,,,NOT_RUN,existing_curated_demo,Bank-reviewed alias or source-product evidence before production approval
+PURE GYM LTD,366,low_to_medium,ACCEPTED_DEMO,True,False,gym,,,,,NOT_RUN,existing_curated_demo,Bank-reviewed alias or source-product evidence before production approval
+PUREGYM,359,low_to_medium,ACCEPTED_DEMO,True,False,gym,,,,,NOT_RUN,existing_curated_demo,Bank-reviewed alias or source-product evidence before production approval
+SAINSBURYS S/MKTS,8565,low_to_medium,ACCEPTED_DEMO,True,False,not_a_bill,,,,,NOT_RUN,existing_curated_demo,Bank-reviewed alias or source-product evidence before production approval
+SEVERN TRENT DD,663,low_to_medium,ACCEPTED_DEMO,True,False,water,,,,,NOT_RUN,existing_curated_demo,Bank-reviewed alias or source-product evidence before production approval
+SEVERN TRENT WATER,710,low_to_medium,ACCEPTED_DEMO,True,False,water,,,,,NOT_RUN,existing_curated_demo,Bank-reviewed alias or source-product evidence before production approval
+SKY DIGITAL,194,medium,REVIEW_REQUIRED,False,True,broadband,broadband,1.0,broadband,1.0,AGREE,telecom_product_unknown,Product code or bank-verified rule
+SKY STORE FILM,226,low_to_medium,ACCEPTED_DEMO,True,False,not_a_bill,,,,,NOT_RUN,existing_curated_demo,Bank-reviewed alias or source-product evidence before production approval
+SKY UK LIMITED DD,168,medium,REVIEW_REQUIRED,False,True,broadband,broadband,1.0,broadband,1.0,AGREE,telecom_product_unknown,Product code or bank-verified rule
+SKY UK LTD,178,medium,REVIEW_REQUIRED,False,True,broadband,broadband,1.0,broadband,1.0,AGREE,telecom_product_unknown,Product code or bank-verified rule
+SKY*BROADBAND 0344,146,low_to_medium,ACCEPTED_DEMO,True,False,broadband,,,,,NOT_RUN,existing_curated_demo,Bank-reviewed alias or source-product evidence before production approval
+SPOTIFY,302,low_to_medium,ACCEPTED_DEMO,True,False,streaming,,,,,NOT_RUN,existing_curated_demo,Bank-reviewed alias or source-product evidence before production approval
+SPOTIFY P1A2B3,279,low_to_medium,ACCEPTED_DEMO,True,False,streaming,,,,,NOT_RUN,existing_curated_demo,Bank-reviewed alias or source-product evidence before production approval
+SPOTIFY UK,295,low_to_medium,ACCEPTED_DEMO,True,False,streaming,,,,,NOT_RUN,existing_curated_demo,Bank-reviewed alias or source-product evidence before production approval
+SURREY HEATH BC CT,924,low_to_medium,ACCEPTED_DEMO,True,False,council_tax,,,,,NOT_RUN,existing_curated_demo,Bank-reviewed alias or source-product evidence before production approval
+TALK TALK TELECOM,239,low_to_medium,ACCEPTED_DEMO,True,False,broadband,,,,,NOT_RUN,existing_curated_demo,Bank-reviewed alias or source-product evidence before production approval
+TALKTALK,245,low_to_medium,ACCEPTED_DEMO,True,False,broadband,,,,,NOT_RUN,existing_curated_demo,Bank-reviewed alias or source-product evidence before production approval
+TALKTALK DD 0345,227,low_to_medium,ACCEPTED_DEMO,True,False,broadband,,,,,NOT_RUN,existing_curated_demo,Bank-reviewed alias or source-product evidence before production approval
+TELEFONICA UK O2,249,low_to_medium,ACCEPTED_DEMO,True,False,mobile,,,,,NOT_RUN,existing_curated_demo,Bank-reviewed alias or source-product evidence before production approval
+TESCO MOBILE,347,low_to_medium,ACCEPTED_DEMO,True,False,mobile,,,,,NOT_RUN,existing_curated_demo,Bank-reviewed alias or source-product evidence before production approval
+TESCO MOBILE LTD DD,415,low_to_medium,ACCEPTED_DEMO,True,False,mobile,,,,,NOT_RUN,existing_curated_demo,Bank-reviewed alias or source-product evidence before production approval
+TESCO PFS 4021,8479,low_to_medium,ACCEPTED_DEMO,True,False,not_a_bill,,,,,NOT_RUN,existing_curated_demo,Bank-reviewed alias or source-product evidence before production approval
+TESCO STORES 2211,8467,low_to_medium,ACCEPTED_DEMO,True,False,not_a_bill,,,,,NOT_RUN,existing_curated_demo,Bank-reviewed alias or source-product evidence before production approval
+TFL TRAVEL CH,8545,low_to_medium,ACCEPTED_DEMO,True,False,not_a_bill,,,,,NOT_RUN,existing_curated_demo,Bank-reviewed alias or source-product evidence before production approval
+THAMES WATER,645,low_to_medium,ACCEPTED_DEMO,True,False,water,,,,,NOT_RUN,existing_curated_demo,Bank-reviewed alias or source-product evidence before production approval
+THAMES WATER UTILITIES,688,low_to_medium,ACCEPTED_DEMO,True,False,water,,,,,NOT_RUN,existing_curated_demo,Bank-reviewed alias or source-product evidence before production approval
+THE GYM GROUP,355,low_to_medium,ACCEPTED_DEMO,True,False,gym,,,,,NOT_RUN,existing_curated_demo,Bank-reviewed alias or source-product evidence before production approval
+THREE,316,low_to_medium,ACCEPTED_DEMO,True,False,mobile,,,,,NOT_RUN,existing_curated_demo,Bank-reviewed alias or source-product evidence before production approval
+THREE.CO.UK,225,low_to_medium,ACCEPTED_DEMO,True,False,mobile,,,,,NOT_RUN,existing_curated_demo,Bank-reviewed alias or source-product evidence before production approval
+UBER *TRIP,8477,low_to_medium,ACCEPTED_DEMO,True,False,not_a_bill,,,,,NOT_RUN,existing_curated_demo,Bank-reviewed alias or source-product evidence before production approval
+VIRGIN MEDIA,235,medium,REVIEW_REQUIRED,False,True,broadband,broadband,1.0,broadband,1.0,AGREE,telecom_product_unknown,Contract product code or approved broadband-only business rule
+VIRGIN MEDIA PYMTS,237,medium,REVIEW_REQUIRED,False,True,broadband,broadband,1.0,broadband,1.0,AGREE,telecom_product_unknown,Product code or bank-verified rule
+VIRGINMEDIA DD,228,medium,REVIEW_REQUIRED,False,True,broadband,broadband,0.865,broadband,0.68129,AGREE,telecom_product_unknown,Product code or bank-verified rule
+VODAFONE LTD,359,medium,REVIEW_REQUIRED,False,True,mobile,mobile,0.8722,mobile,0.7726,AGREE,telecom_product_unknown,Product reference or bank-verified rule
+VODAFONE UK DD,333,low_to_medium,ACCEPTED_DEMO,True,False,mobile,,,,,NOT_RUN,existing_curated_demo,Bank-reviewed alias or source-product evidence before production approval

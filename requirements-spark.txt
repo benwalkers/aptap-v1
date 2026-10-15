@@ -1,0 +1,3 @@
+# Optional distributed Spark/Iceberg reference environment; NOT required locally.
+# Needs compatible Java/Spark runtime and the matching Apache Iceberg runtime JARs.
+pyspark==3.5.5

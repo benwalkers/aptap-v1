@@ -1,0 +1,22 @@
+description,category,provider_id,method,score,needs_review,candidate_category,matched_reference,status
+CARD PAYMENT TO JOHN S,water,,lexical_suggestion,0.2834,True,water,SEVERN TRENT DD,REVIEW_REQUIRED
+LIVERPOOL VICTORIA,not_a_bill,,lexical_suggestion,0.3669,True,not_a_bill,DELIVEROO,REVIEW_REQUIRED
+DIRECT LINE INS,home_insurance,,lexical_suggestion,1.0,True,home_insurance,DIRECT LINE INS,REVIEW_REQUIRED
+VIRGIN MEDIA,broadband,,lexical_suggestion,1.0,True,broadband,VIRGIN MEDIA,REVIEW_REQUIRED
+LV INSURANCE,home_insurance,,lexical_suggestion,1.0,True,home_insurance,LV INSURANCE,REVIEW_REQUIRED
+AVIVA DD,car_insurance,,lexical_suggestion,0.6171,True,car_insurance,AVIVA INSURANCE,REVIEW_REQUIRED
+AMZNPRIME UK,streaming,,lexical_suggestion,1.0,True,streaming,AMZNPRIME UK,REVIEW_REQUIRED
+AMAZON PRIME*,streaming,,lexical_suggestion,1.0,True,streaming,AMAZON PRIME*,REVIEW_REQUIRED
+DIRECTLINE DD,home_insurance,,lexical_suggestion,0.7796,True,home_insurance,DIRECT LINE INS,REVIEW_REQUIRED
+AVIVA INSURANCE,car_insurance,,lexical_suggestion,1.0,True,car_insurance,AVIVA INSURANCE,REVIEW_REQUIRED
+BRITISH GAS SERVICES,energy,,lexical_suggestion,0.9221,True,energy,BRITISH GAS,REVIEW_REQUIRED
+CROYDON COUNCIL,council_tax,,lexical_suggestion,1.0,True,council_tax,CROYDON COUNCIL,REVIEW_REQUIRED
+LV= DD,home_insurance,,lexical_suggestion,0.3813,True,home_insurance,LV INSURANCE,REVIEW_REQUIRED
+SKY DIGITAL,broadband,,lexical_suggestion,1.0,True,broadband,SKY DIGITAL,REVIEW_REQUIRED
+VIRGIN MEDIA PYMTS,broadband,,lexical_suggestion,1.0,True,broadband,VIRGIN MEDIA PYMTS,REVIEW_REQUIRED
+SKY UK LIMITED DD,broadband,,lexical_suggestion,1.0,True,broadband,SKY UK LIMITED DD,REVIEW_REQUIRED
+VIRGINMEDIA DD,broadband,,lexical_suggestion,0.865,True,broadband,VIRGIN MEDIA,REVIEW_REQUIRED
+BT GROUP PLC,gym,,lexical_suggestion,0.5333,True,gym,GYM GROUP LTD,REVIEW_REQUIRED
+SKY UK LTD,broadband,,lexical_suggestion,1.0,True,broadband,SKY UK LTD,REVIEW_REQUIRED
+EE LIMITED,mobile,,lexical_suggestion,1.0,True,mobile,EE LIMITED,REVIEW_REQUIRED
+VODAFONE LTD,mobile,,lexical_suggestion,0.8722,True,mobile,VODAFONE UK DD,REVIEW_REQUIRED

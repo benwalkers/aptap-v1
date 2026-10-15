@@ -1,0 +1,7 @@
+.venv/
+__pycache__/
+*.pyc
+work/
+.pytest_cache/
+models/minilm/
+.DS_Store

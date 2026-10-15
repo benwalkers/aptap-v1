@@ -1,0 +1,3 @@
+description,category,candidate_category,score,method
+AVIVA DD,car_insurance,car_insurance,0.6171,lexical_minilm_agree
+NEBULA PAYMENT 1234,not_a_bill,not_a_bill,0.1902,lexical_minilm_disagree

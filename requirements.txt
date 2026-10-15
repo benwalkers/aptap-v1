@@ -1,0 +1,7 @@
+# ApTap Release 2: local development, ingestion tests and PR-curve evaluation.
+# Python 3.11+. Core Python/SQLite ingestion needs no third-party packages.
+# Install: python -m pip install -r requirements.txt
+pytest>=8,<10
+numpy>=1.26,<3
+scikit-learn>=1.5,<2
+matplotlib>=3.8,<4

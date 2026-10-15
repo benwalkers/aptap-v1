@@ -1,0 +1,3 @@
+description,original_label,corrected_label,reason,status
+OCTOPUS ENERGY,broadband,energy,Merchant explicitly identifies an energy supplier,CORRECTION_ALREADY_APPLIED_IN_RELEASE1
+TESCO MOBILE,groceries,mobile,Descriptor explicitly identifies Tesco's mobile service,CORRECTION_ALREADY_APPLIED_IN_RELEASE1

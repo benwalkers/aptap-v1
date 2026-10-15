@@ -1,0 +1,12 @@
+{
+  "contract_id": "transactions_csv_v1",
+  "schema_version": "csv_v1",
+  "source_period": "filename_metadata_only",
+  "date_field": "booking_date",
+  "date_format": "YYYY-MM-DD",
+  "required_fields": ["transaction_id", "customer_id", "booking_date", "amount", "currency", "description"],
+  "amount_semantics": "signed_decimal_GBP",
+  "currency": "GBP",
+  "additive_fields": "retain_in_immutable_bronze",
+  "cdc_contract": "snapshot_like_files_without_change_sequence"
+}

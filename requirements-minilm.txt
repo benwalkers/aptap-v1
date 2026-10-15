@@ -1,0 +1,4 @@
+# Optional offline MiniLM inference. The model weights are provisioned separately.
+# Use after core setup: python -m pip install -r requirements-minilm.txt
+# For controlled bank deployment, use a separately tested, locked dependency set.
+sentence-transformers>=3.0,<6

@@ -1,0 +1,14 @@
+# Build only after provisioning models/minilm and installing pinned dependencies
+# from an approved repository during a connected, controlled build stage.
+FROM python:3.11-slim
+WORKDIR /app
+ENV PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1 HF_HUB_OFFLINE=1
+COPY requirements-minilm.txt /app/
+RUN pip install --no-cache-dir -r requirements-minilm.txt
+COPY pipeline/ /app/pipeline/
+COPY categorise/ /app/categorise/
+COPY classification/ /app/classification/
+COPY configs/ /app/configs/
+COPY models/minilm/ /app/models/minilm/
+RUN test -f /app/models/minilm/modules.json
+ENTRYPOINT ["python", "-m", "pipeline"]

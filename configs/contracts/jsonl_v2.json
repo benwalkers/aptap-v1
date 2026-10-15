@@ -1,0 +1,12 @@
+{
+  "contract_id": "transactions_jsonl_v2",
+  "schema_version": "jsonl_v2",
+  "source_period": "filename_metadata_only",
+  "date_field": "posted",
+  "date_formats": ["DD/MM/YYYY", "YYYY-MM-DD (explicit October-compatible variation)"],
+  "required_fields": ["txn_id", "cust_ref", "posted", "value", "direction", "narrative"],
+  "amount_semantics": "nonnegative_magnitude_plus_DEBIT_or_CREDIT",
+  "currency": "GBP_by_declared_feed_contract_when_key_absent",
+  "additive_fields": "retain_in_immutable_bronze",
+  "cdc_contract": "snapshot_like_files_without_change_sequence"
+}

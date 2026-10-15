@@ -1,0 +1,139 @@
+{
+  "design": "Exploratory leave-one-description-out, reference retrieval (NO supervised fit)",
+  "caveats": [
+    "NOT an independent held-out test set or merchant-family-held-out validation.",
+    "Supplied labels may contain unresolved errors; only two known corrections applied.",
+    "PR / AP use one-vs-rest similarity rankings, NOT calibrated class probabilities.",
+    "Top-1 precision/recall/F1 FORCE a category; deployed funnel may abstain UNKNOWN.",
+    "Support is too small for robust thresholds, confidence intervals or production claims."
+  ],
+  "models": [
+    {
+      "model": "char_tfidf",
+      "n_descriptors": 57,
+      "top1_accuracy": 0.78947,
+      "top1_macro_f1": 0.6355,
+      "macro_average_precision": 0.69795,
+      "low_support_classes": [
+        "car_insurance",
+        "council_tax",
+        "gym",
+        "home_insurance",
+        "water"
+      ],
+      "per_category": [
+        {
+          "model": "char_tfidf",
+          "category": "broadband",
+          "support": 11,
+          "prevalence": 0.19298,
+          "average_precision": 0.88497,
+          "top1_precision": 0.71429,
+          "top1_recall": 0.90909,
+          "top1_f1": 0.8,
+          "evidence_note": "EXPLORATORY"
+        },
+        {
+          "model": "char_tfidf",
+          "category": "car_insurance",
+          "support": 3,
+          "prevalence": 0.05263,
+          "average_precision": 0.63889,
+          "top1_precision": 0.5,
+          "top1_recall": 0.66667,
+          "top1_f1": 0.57143,
+          "evidence_note": "VERY_LOW_SUPPORT"
+        },
+        {
+          "model": "char_tfidf",
+          "category": "council_tax",
+          "support": 3,
+          "prevalence": 0.05263,
+          "average_precision": 0.86667,
+          "top1_precision": 1.0,
+          "top1_recall": 1.0,
+          "top1_f1": 1.0,
+          "evidence_note": "VERY_LOW_SUPPORT"
+        },
+        {
+          "model": "char_tfidf",
+          "category": "energy",
+          "support": 9,
+          "prevalence": 0.15789,
+          "average_precision": 0.90889,
+          "top1_precision": 1.0,
+          "top1_recall": 0.88889,
+          "top1_f1": 0.94118,
+          "evidence_note": "EXPLORATORY"
+        },
+        {
+          "model": "char_tfidf",
+          "category": "gym",
+          "support": 1,
+          "prevalence": 0.01754,
+          "average_precision": 0.01754,
+          "top1_precision": 0.0,
+          "top1_recall": 0.0,
+          "top1_f1": 0.0,
+          "evidence_note": "VERY_LOW_SUPPORT"
+        },
+        {
+          "model": "char_tfidf",
+          "category": "home_insurance",
+          "support": 2,
+          "prevalence": 0.03509,
+          "average_precision": 0.325,
+          "top1_precision": 0.0,
+          "top1_recall": 0.0,
+          "top1_f1": 0.0,
+          "evidence_note": "VERY_LOW_SUPPORT"
+        },
+        {
+          "model": "char_tfidf",
+          "category": "mobile",
+          "support": 11,
+          "prevalence": 0.19298,
+          "average_precision": 0.91338,
+          "top1_precision": 0.90909,
+          "top1_recall": 0.90909,
+          "top1_f1": 0.90909,
+          "evidence_note": "EXPLORATORY"
+        },
+        {
+          "model": "char_tfidf",
+          "category": "not_a_bill",
+          "support": 6,
+          "prevalence": 0.10526,
+          "average_precision": 0.48621,
+          "top1_precision": 0.66667,
+          "top1_recall": 0.33333,
+          "top1_f1": 0.44444,
+          "evidence_note": "EXPLORATORY"
+        },
+        {
+          "model": "char_tfidf",
+          "category": "streaming",
+          "support": 7,
+          "prevalence": 0.12281,
+          "average_precision": 0.93793,
+          "top1_precision": 0.75,
+          "top1_recall": 0.85714,
+          "top1_f1": 0.8,
+          "evidence_note": "EXPLORATORY"
+        },
+        {
+          "model": "char_tfidf",
+          "category": "water",
+          "support": 4,
+          "prevalence": 0.07018,
+          "average_precision": 1.0,
+          "top1_precision": 0.8,
+          "top1_recall": 1.0,
+          "top1_f1": 0.88889,
+          "evidence_note": "VERY_LOW_SUPPORT"
+        }
+      ],
+      "plot": "pr_curves_char_tfidf.png"
+    }
+  ]
+}

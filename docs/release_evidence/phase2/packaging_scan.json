@@ -1,0 +1,50 @@
+{
+  "text_files_scanned": 122,
+  "findings": [
+    {
+      "path": "report/risk_dashboard.html",
+      "kind": "assigned_secret",
+      "line": 2755
+    },
+    {
+      "path": "report/risk_dashboard.html",
+      "kind": "assigned_secret",
+      "line": 2755
+    },
+    {
+      "path": "report/risk_dashboard.html",
+      "kind": "assigned_secret",
+      "line": 2755
+    },
+    {
+      "path": "report/risk_dashboard.html",
+      "kind": "assigned_secret",
+      "line": 2760
+    },
+    {
+      "path": "report/risk_dashboard.html",
+      "kind": "assigned_secret",
+      "line": 2760
+    },
+    {
+      "path": "report/risk_dashboard.html",
+      "kind": "assigned_secret",
+      "line": 2760
+    },
+    {
+      "path": "report/risk_dashboard.html",
+      "kind": "assigned_secret",
+      "line": 2760
+    },
+    {
+      "path": "report/risk_dashboard.html",
+      "kind": "assigned_secret",
+      "line": 2760
+    },
+    {
+      "path": "report/risk_dashboard.html",
+      "kind": "assigned_secret",
+      "line": 3256
+    }
+  ]
+}

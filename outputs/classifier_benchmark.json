@@ -1,0 +1,73 @@
+{
+  "n": 57,
+  "method": "leave-one-description-out",
+  "limitations": "Related merchant families remain across folds; rare classes are too small for reliable calibration or PR curves.",
+  "models": {
+    "char_tfidf": {
+      "accuracy": 0.789,
+      "macro_f1": 0.635,
+      "per_category": {
+        "broadband": {
+          "support": 11,
+          "precision": 0.714,
+          "recall": 0.909,
+          "f1": 0.8
+        },
+        "car_insurance": {
+          "support": 3,
+          "precision": 0.5,
+          "recall": 0.667,
+          "f1": 0.571
+        },
+        "council_tax": {
+          "support": 3,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "energy": {
+          "support": 9,
+          "precision": 1.0,
+          "recall": 0.889,
+          "f1": 0.941
+        },
+        "gym": {
+          "support": 1,
+          "precision": 0,
+          "recall": 0.0,
+          "f1": 0
+        },
+        "home_insurance": {
+          "support": 2,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0
+        },
+        "mobile": {
+          "support": 11,
+          "precision": 0.909,
+          "recall": 0.909,
+          "f1": 0.909
+        },
+        "not_a_bill": {
+          "support": 6,
+          "precision": 0.667,
+          "recall": 0.333,
+          "f1": 0.444
+        },
+        "streaming": {
+          "support": 7,
+          "precision": 0.75,
+          "recall": 0.857,
+          "f1": 0.8
+        },
+        "water": {
+          "support": 4,
+          "precision": 0.8,
+          "recall": 1.0,
+          "f1": 0.889
+        }
+      }
+    }
+  }
+}

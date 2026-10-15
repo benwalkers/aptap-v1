@@ -1,0 +1,130 @@
+{
+  "as_of": "2026-09-30",
+  "batch_actions": [
+    {
+      "action": "COMMITTED",
+      "conflicts": 0,
+      "corrected": 0,
+      "duplicates": 515,
+      "file": "transactions_2026_07.csv",
+      "inserted": 42860,
+      "invalid": 40,
+      "rows": 43415,
+      "sha256": "3556efaedf875557c8df8b026195c0115ba0dffc655312851c7c382de0b9c63b"
+    },
+    {
+      "action": "COMMITTED",
+      "conflicts": 0,
+      "corrected": 0,
+      "duplicates": 463,
+      "file": "transactions_2026_08.csv",
+      "inserted": 46327,
+      "invalid": 0,
+      "rows": 46790,
+      "sha256": "7d02fdd2cacb4c324b7a9981e547f5c3b78ce9d4a34f4f50e5bf1bafd5561d24"
+    },
+    {
+      "action": "COMMITTED",
+      "conflicts": 0,
+      "corrected": 0,
+      "duplicates": 445,
+      "file": "transactions_2026_09.jsonl",
+      "inserted": 44505,
+      "invalid": 0,
+      "rows": 44950,
+      "sha256": "6fffeebcb335051b54ce7010173ff80348603f26c68cd091702fac5b9b7dd1ed"
+    }
+  ],
+  "bill_evidence_validation": {
+    "as_of": "2026-09-30",
+    "bills_with_monthly_total_gap_gt_10pct": 7,
+    "bills_with_multiple_payments_in_any_month": 267,
+    "bills_with_same_day_same_amount_payment_groups": 267,
+    "cadence_counts": {
+      "monthly": 6561,
+      "monthly_candidate": 120
+    },
+    "candidate_count": 6681,
+    "distinct_supporting_transaction_ids": 19938,
+    "externally_verified_recurring_contracts": 0,
+    "interpretation": "Every current-month bill candidate checked against active Silver IDs, trust rules, recurrence, individual-payment medians and forecast dates. Same-day repeats are flagged, never silently deleted. Monthly totals are diagnostic only; no contractual recurrence or future charge is externally verified.",
+    "recurrence_evidence_counts": {
+      "HISTORICAL_CONSECUTIVE_ONLY": 0,
+      "MONTHLY_CANDIDATE_INSUFFICIENT_HISTORY": 120,
+      "RECENT_CONSECUTIVE_MONTHS": 6561
+    },
+    "same_day_same_amount_extra_payments": 267,
+    "same_day_same_amount_payment_groups": 267,
+    "validation_status": "PASSED"
+  },
+  "category_summary": [
+    {
+      "bootstrap_ci": [
+        12.389285714285714,
+        16.060454545454544
+      ],
+      "category": "energy",
+      "mean_observed_saving": 14.17,
+      "pairs": 154,
+      "provisional_pairs": 67
+    },
+    {
+      "bootstrap_ci": [
+        -1.6790196078431372,
+        7.022549019607843
+      ],
+      "category": "mobile",
+      "mean_observed_saving": 2.69,
+      "pairs": 51,
+      "provisional_pairs": 18
+    },
+    {
+      "bootstrap_ci": null,
+      "category": "broadband",
+      "mean_observed_saving": -13.45,
+      "pairs": 4,
+      "provisional_pairs": 2
+    }
+  ],
+  "classification_methods": {
+    "curated_alias": 118659,
+    "lexical_suggestion": 15033
+  },
+  "clean": 133692,
+  "conflicts": 0,
+  "corrected": 0,
+  "duplicates": 1423,
+  "excluded_from_bill_features": 113374,
+  "invalid": 40,
+  "new_batches": 3,
+  "peak_memory_mb": 64.4,
+  "raw": 135155,
+  "recurring_bill_candidates": 6681,
+  "rejected": 1463,
+  "review_descriptors": 21,
+  "review_descriptors_count": 21,
+  "runtime_seconds": 8.842,
+  "superseded": 0,
+  "switch_candidates": 209,
+  "switch_evidence_validation": {
+    "candidate_count": 209,
+    "distinct_supporting_transaction_ids": 633,
+    "evidence_counts": {
+      "PROVISIONAL": 87,
+      "REPEATED_NEW_PROVIDER": 122,
+      "SUPPORTED_PAYMENT_PATTERN": 0
+    },
+    "externally_confirmed_switches": 0,
+    "interpretation": "Candidate payment-pattern transitions only. Checked against active Silver IDs, dates, provider/category mappings and medians; no independent contract cancellation or verified savings evidence.",
+    "observed_payment_difference_counts": {
+      "higher_new_payment": 47,
+      "lower_new_payment": 162,
+      "no_change": 0
+    },
+    "validation_status": "PASSED",
+    "verified_customer_savings": 0
+  },
+  "total_unique_descriptors": 92,
+  "unknown_descriptors": 21,
+  "unknown_transaction_count": 15033
+}

@@ -1,0 +1,23 @@
+{
+  "same_four_csv_hashes": true,
+  "new_batches": 0,
+  "no_new_batches": true,
+  "files": {
+    "clean_transactions.csv": {
+      "before": "51c414b49cf55d909da11e91071e0f561b4ea3b6ae342b5a11591f25c31d5801",
+      "after": "51c414b49cf55d909da11e91071e0f561b4ea3b6ae342b5a11591f25c31d5801"
+    },
+    "rejected_rows.csv": {
+      "before": "e96798d578d45169b4c2356fbc0d6957a8b804b0323918851a63c2de1e402784",
+      "after": "e96798d578d45169b4c2356fbc0d6957a8b804b0323918851a63c2de1e402784"
+    },
+    "recurring_bills.csv": {
+      "before": "5cbc83518d921dbf727b52cb2a7bcbbb8fad8607d1018a3b09ac416ddbbe2050",
+      "after": "5cbc83518d921dbf727b52cb2a7bcbbb8fad8607d1018a3b09ac416ddbbe2050"
+    },
+    "switches.csv": {
+      "before": "25134c08a832f0f37d831fb2d83ee461ab0e354fbe369a2e3b7ab89cf79498cb",
+      "after": "25134c08a832f0f37d831fb2d83ee461ab0e354fbe369a2e3b7ab89cf79498cb"
+    }
+  }
+}

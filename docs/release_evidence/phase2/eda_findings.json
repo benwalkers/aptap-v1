@@ -1,0 +1,29 @@
+{
+  "source_records": 135155,
+  "september_records": 44950,
+  "september_values_containing_pound_symbol": 22476,
+  "september_within_file_repeat_occurrences": 445,
+  "september_raw_different_repeat_occurrences": 312,
+  "changed_raw_fields": {
+    "value": 211,
+    "narrative": 183
+  },
+  "canonical_corrections_in_fresh_run": 0,
+  "raw_distinct_descriptions": 184,
+  "normalised_distinct_descriptions": 92,
+  "raw_label_rows": 57,
+  "raw_label_categories": {
+    "broadband": 12,
+    "mobile": 10,
+    "not_a_bill": 6,
+    "home_insurance": 2,
+    "car_insurance": 3,
+    "streaming": 7,
+    "energy": 8,
+    "water": 4,
+    "groceries": 1,
+    "gym": 1,
+    "council_tax": 3
+  },
+  "interpretation": "Raw repeated-payload differences affect value formatting and narrative case/spacing; canonical duplicate counts are separate from source-authoritative corrections. Raw labels include incorrect categories and are not independently adjudicated ground truth."
+}

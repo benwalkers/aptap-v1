@@ -1,0 +1,22 @@
+{
+  "audit_schema_version": "1.0",
+  "source": "Release 2 clean_transactions.csv and existing merchant catalogues",
+  "observed_on": "source_snapshot",
+  "total_unique_descriptors": 92,
+  "total_clean_transactions": 133692,
+  "current_demo_accepted_descriptors": 71,
+  "current_unknown_descriptors": 21,
+  "current_unknown_transactions": 15033,
+  "additional_accepted_aliases_flagged": 2,
+  "additional_accepted_alias_transactions_at_risk": 851,
+  "conservative_scenario_unknown_descriptors": 23,
+  "conservative_scenario_unknown_transactions": 15884,
+  "new_auto_approvals": 0,
+  "notes": [
+    "No additional merchant type is accepted from ML similarity or manufacturer/provider identity alone.",
+    "All mappings marked CURATED_DEMO are synthetic assumptions; none establishes external bank sign-off.",
+    "Two already-applied human-label corrections are preserved with original source-label provenance.",
+    "Proposed conservative registry removes only the two generic Admiral insurance aliases; it is NOT automatically deployed.",
+    "Savings and switching results must be rerun and checked before production promotion."
+  ]
+}

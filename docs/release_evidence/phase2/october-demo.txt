@@ -1,0 +1,12 @@
+
+===== 07 | Optional isolated October schema + replay + invalid-record demo =====
+Wrote optional test fixture: work/demo_october/data/transactions_2026_10.jsonl (do not mix with supplied original files for baseline)
+RECONCILIATION: 135,158 = 133,693 clean + 1,465 rejected
+Batch actions: [('transactions_2026_07.csv', 'COMMITTED'), ('transactions_2026_08.csv', 'COMMITTED'), ('transactions_2026_09.jsonl', 'COMMITTED'), ('transactions_2026_10.jsonl', 'COMMITTED')]
+Flagged for review: 21/92 descriptors, 15,033 transaction occurrences
+Bills (candidates): 1; switches (candidates): 1
+Bill evidence verified: PASSED | {'RECENT_CONSECUTIVE_MONTHS': 0, 'HISTORICAL_CONSECUTIVE_ONLY': 0, 'MONTHLY_CANDIDATE_INSUFFICIENT_HISTORY': 1} | monthly-total outliers: 0
+Switch evidence verified: PASSED | {'PROVISIONAL': 1, 'REPEATED_NEW_PROVIDER': 0, 'SUPPORTED_PAYMENT_PATTERN': 0} | externally confirmed: 0
+Runtime 8.346s; peak RSS 71.5 MiB
+Outputs: /private<ISOLATED_PROJECT>/work/demo_october/outputs | report: work/demo_october/report/one_page_report.html
+Demo-only outputs in: work/demo_october/outputs; primary outputs/ unaffected.

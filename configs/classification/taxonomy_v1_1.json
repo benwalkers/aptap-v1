@@ -1,0 +1,10 @@
+{
+  "taxonomy_version": "v1.1-demo",
+  "business_categories": ["broadband", "energy", "mobile", "car_insurance", "home_insurance", "water", "streaming", "gym", "council_tax", "not_a_bill"],
+  "abstention_outcome": "unknown",
+  "review_required": "unknown is an operational outcome, not a positive not_a_bill label",
+  "assignment_warning": "Adds unknown as eleventh output value; confirm acceptance with ApTap before submission",
+  "approved_alias_status": "CURATED_DEMO_NOT_BANK_APPROVED",
+  "automatic_semantic_acceptance": false,
+  "calibration_ready": false
+}

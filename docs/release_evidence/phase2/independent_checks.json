@@ -1,0 +1,104 @@
+{
+  "schemas_and_hashes": {
+    "clean_transactions.csv": {
+      "columns": [
+        "transaction_id",
+        "customer_id",
+        "booking_date",
+        "amount",
+        "description"
+      ],
+      "rows": 133692,
+      "sha256": "51c414b49cf55d909da11e91071e0f561b4ea3b6ae342b5a11591f25c31d5801"
+    },
+    "rejected_rows.csv": {
+      "columns": [
+        "source_file",
+        "source_line",
+        "transaction_id",
+        "reason",
+        "raw_json"
+      ],
+      "rows": 1463,
+      "sha256": "e96798d578d45169b4c2356fbc0d6957a8b804b0323918851a63c2de1e402784"
+    },
+    "recurring_bills.csv": {
+      "columns": [
+        "customer_id",
+        "merchant",
+        "category",
+        "cadence",
+        "typical_amount",
+        "next_expected_date"
+      ],
+      "rows": 6681,
+      "sha256": "5cbc83518d921dbf727b52cb2a7bcbbb8fad8607d1018a3b09ac416ddbbe2050"
+    },
+    "switches.csv": {
+      "columns": [
+        "customer_id",
+        "category",
+        "old_merchant",
+        "new_merchant",
+        "first_month_with_new"
+      ],
+      "rows": 209,
+      "sha256": "25134c08a832f0f37d831fb2d83ee461ab0e354fbe369a2e3b7ab89cf79498cb"
+    }
+  },
+  "reconciliation": {
+    "raw": 135155,
+    "clean": 133692,
+    "rejected": 1463
+  },
+  "bill": {
+    "validation_status": "PASSED",
+    "as_of": "2026-09-30",
+    "candidate_count": 6681,
+    "cadence_counts": {
+      "monthly": 6561,
+      "monthly_candidate": 120
+    },
+    "recurrence_evidence_counts": {
+      "RECENT_CONSECUTIVE_MONTHS": 6561,
+      "HISTORICAL_CONSECUTIVE_ONLY": 0,
+      "MONTHLY_CANDIDATE_INSUFFICIENT_HISTORY": 120
+    },
+    "distinct_supporting_transaction_ids": 19938,
+    "bills_with_multiple_payments_in_any_month": 267,
+    "bills_with_same_day_same_amount_payment_groups": 267,
+    "same_day_same_amount_payment_groups": 267,
+    "same_day_same_amount_extra_payments": 267,
+    "bills_with_monthly_total_gap_gt_10pct": 7,
+    "externally_verified_recurring_contracts": 0,
+    "interpretation": "Every current-month bill candidate checked against active Silver IDs, trust rules, recurrence, individual-payment medians and forecast dates. Same-day repeats are flagged, never silently deleted. Monthly totals are diagnostic only; no contractual recurrence or future charge is externally verified."
+  },
+  "switch": {
+    "validation_status": "PASSED",
+    "candidate_count": 209,
+    "evidence_counts": {
+      "PROVISIONAL": 87,
+      "REPEATED_NEW_PROVIDER": 122,
+      "SUPPORTED_PAYMENT_PATTERN": 0
+    },
+    "externally_confirmed_switches": 0,
+    "verified_customer_savings": 0,
+    "observed_payment_difference_counts": {
+      "lower_new_payment": 162,
+      "higher_new_payment": 47,
+      "no_change": 0
+    },
+    "distinct_supporting_transaction_ids": 633,
+    "interpretation": "Candidate payment-pattern transitions only. Checked against active Silver IDs, dates, provider/category mappings and medians; no independent contract cancellation or verified savings evidence."
+  },
+  "sqlite_integrity": "ok",
+  "python": "3.14.3 (v3.14.3:323c59a5e34, Feb  3 2026, 11:41:37) [Clang 16.0.0 (clang-1600.0.26.6)]",
+  "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
+  "packages": {
+    "pytest": "9.1.1",
+    "numpy": "2.5.4",
+    "scikit-learn": "1.9.1",
+    "matplotlib": "3.11.2"
+  },
+  "sqlite_version": "3.50.4"
+}
