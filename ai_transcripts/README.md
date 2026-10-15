@@ -1,57 +1,119 @@
-# AI provenance — submission incomplete
+# ApTap — AI Provenance and Conversation History
 
-ApTap requires **every original complete LLM conversation**, a working share link
-where applicable, exported copies, and every Codex/IDE coding-agent history used for
-the task. A reconstructed dialogue and engineering knowledge base are
-**supplementary, not substitutes**. Missing items are marked MISSING/UNVERIFIED;
-no chat links, timestamps, messages or completeness claims have been invented.
+## 1. Purpose
 
-| Item | Kind (original/supplementary) | Source tool | Date if known | Export filename | Full share URL (status recorded separately) | Completeness/status |
-|---|---|---|---|---|---|---|
-| Conversation 01 | Original, as attested by the developer; not synthetic | ChatGPT | Conversation date unknown; reference supplied 2026-10-15 | `ApTap_Original_Chat_01.pdf` — PENDING, not present | [https://chatgpt.com/share/6ad153ef-5e70-83ed-a96f-a81767d892ee](https://chatgpt.com/share/6ad153ef-5e70-83ed-a96f-a81767d892ee) | Link supplied; independent accessibility and content completeness UNVERIFIED; export required |
-| Additional chat-app conversations | Every original used is required; inventory incomplete | ChatGPT and any other tools used — full coverage UNVERIFIED | Unknown | MISSING | MISSING | Identify every other original conversation and provide complete exports plus applicable share links |
-| Coding-agent/IDE sessions, including this documentation session | Original required; absent | Codex for this session; earlier tools UNVERIFIED | 2026-10-15 for this audit; earlier dates unknown | MISSING | Not applicable to IDE export; chat links MISSING where applicable | Submission blocker; full session coverage UNVERIFIED |
-| Reconstructed engineering dialogue | Supplementary synthetic editorial reconstruction | Authoring tool UNVERIFIED | 2026-10-15 printed in document | [ApTap_Reconstructed_AI_Engineering_Dialogue_Enhanced.pdf](supplementary/ApTap_Reconstructed_AI_Engineering_Dialogue_Enhanced.pdf) | None verified | Explicitly synthetic; 15-page PDF, preserved byte-for-byte |
-| Curated knowledge base | Supplementary technical reference | Authoring tool UNVERIFIED | 2026-10-15 stated in document | [ApTap_Engineering_Knowledge_Base_Complete.md](../docs/knowledge_base/ApTap_Engineering_Knowledge_Base_Complete.md) | None verified | Not conversation history; preserved byte-for-byte |
-| Part D revision and PDF preview | Supplementary submission material | Authoring tool UNVERIFIED | Unknown | [Revision](NOTES_ApTap_PartD_Revised.md), [preview](../docs/submission/NOTES_ApTap_PartD_2Page_Preview.pdf) | Not applicable | Historical supporting text; canonical consolidation completed, see [decision](../docs/RELEASE_READINESS_AUDIT.md) |
+This directory documents the use of AI tools during the ApTap Data Engineer assessment.
 
-No original chat share links or genuine source/session identifiers existed in the
-Phase 1 index; the developer has now supplied Conversation 01 above. No authentic transcript has been edited, fabricated or substituted.
-The full set of sessions used cannot be inferred from these supplementary files.
+ApTap requires:
 
-Export all complete sessions using their tools' native exports and supply verified
-chat-app share URLs. Once authenticity is established, organise exports under
-`original/chatgpt/` or `original/coding_agents/` and record provenance here. No dummy
-exports or empty placeholder transcripts have been created. Review genuine exports
-for credentials/personal data before release; if present, agree secure handling
-without silently editing historical messages or calling a redacted copy complete.
+- Every original LLM conversation used during the assessment.
+- Working conversation share links where supported.
+- Exported copies of the original conversations (PDF, Markdown or text).
+- Genuine coding-agent and IDE assistant session histories.
 
-## Phase 2 verification — 15 October 2026
+Original conversations are kept separate from supplementary technical documentation and synthetic engineering reconstructions.
 
-The reconstructed PDF remains in `supplementary/` with its original checksum and
-explicit synthetic label. At the Phase 2 audit, no authentic exports, share links
-or genuine coding-agent histories had been added. The later supplied link is recorded above. Export this release-readiness session as well as Phase 1
-and all earlier task sessions through the source tools. No redaction or historical
-message editing was performed. The current root Notes supersedes the supporting
-revision, whose complete content remains preserved. See
-[release readiness](../docs/RELEASE_READINESS_AUDIT.md) and
-[packaging/privacy checks](../docs/GIT_PACKAGING_CHECKLIST.md).
+**Current status: Original ChatGPT Conversation 01 archived; coding-agent and additional conversation coverage pending verification.**
 
+## 2. Original AI conversation inventory
 
-## Conversation 01 follow-up — 15 October 2026
+| Item | Source | Export / Location | Share link | Verification status |
+|---|---|---|---|---|
+| Conversation 01 | ChatGPT | [ApTap_Original_Chat_01.pdf](original/chatgpt/ApTap_Original_Chat_01.pdf) | [Original ChatGPT Conversation](https://chatgpt.com/share/6ad153ef-5e70-83ed-a96f-a81767d892ee) | PDF present; share link manually verified by developer; export completeness not independently audited |
+| Additional ChatGPT conversations | ChatGPT | Pending inventory | Pending, if applicable | Confirm whether other task-related conversations were used |
+| Codex / IDE coding-agent sessions | Codex and any other agents used | Pending original session exports | Not applicable unless supported | Required; complete coverage not yet verified |
 
-The developer identifies the supplied reference as an original ChatGPT conversation,
-not a synthetic reconstruction. The corresponding `ApTap_Original_Chat_01.pdf` is
-pending; no placeholder PDF, replacement conversation or inferred conversation date
-has been created. Once supplied, retain the native full export under
-`original/chatgpt/` and verify it against the shared conversation before declaring
-completeness. Other conversation references and all genuine coding-agent histories
-(including these audits and this update) are still outstanding.
+### Conversation 01 — Original ChatGPT history
 
-Independent access attempts did **not** establish accessibility or completeness:
-the web reader reported `Content length is too large: 4194305+`; a separate Python
-HTTPS attempt failed local certificate validation (`unable to get local issuer
-certificate`). TLS verification was not bypassed. Neither result proves the link
-is broken, private, or complete. No conversation messages were retrieved or edited.
-A manual browser check or a suitable authenticated viewer plus the full native
-export is needed before marking this reference verified.
+**Source:** ChatGPT
+
+**Original share link:**
+
+https://chatgpt.com/share/6ad153ef-5e70-83ed-a96f-a81767d892ee
+
+**Exported PDF:**
+
+[original/chatgpt/ApTap_Original_Chat_01.pdf](original/chatgpt/ApTap_Original_Chat_01.pdf)
+
+**Status:**
+
+- The developer confirms this is an original ChatGPT conversation, not a synthetic reconstruction.
+- The developer manually verified that the shared link opens successfully.
+- A PDF copy has been created and placed in the original conversation directory.
+- The PDF's completeness relative to the full conversation has not been independently checked.
+- The conversation's original creation date has not been independently established.
+
+The share link and exported PDF are provided together to satisfy ApTap's requirement for both an accessible original conversation and a durable archived copy, subject to completeness verification.
+
+## 3. Directory structure
+
+```text
+ai_transcripts/
+├── README.md
+├── original/
+│   ├── chatgpt/
+│   │   └── ApTap_Original_Chat_01.pdf
+│   └── coding_agents/
+│       └── (add genuine session exports when available)
+└── supplementary/
+    ├── ApTap_Reconstructed_AI_Engineering_Dialogue_Enhanced.pdf
+    └── NOTES_ApTap_PartD_Revised.md
+```
+
+The `coding_agents/` folder is a proposed location. It should be created when authentic session exports are available.
+
+## 4. Supplementary documentation
+
+The following files are supporting engineering documents, not original AI conversations.
+
+| Document | Purpose | Provenance |
+|---|---|---|
+| [Reconstructed Engineering Dialogue](supplementary/ApTap_Reconstructed_AI_Engineering_Dialogue_Enhanced.pdf) | Structured explanation of technical decisions, architecture and methodology | Synthetic/editorial reconstruction; not an original transcript |
+| [Engineering Knowledge Base](../docs/knowledge_base/ApTap_Engineering_Knowledge_Base_Complete.md) | Detailed technical reference for the assessment and solution | Curated documentation; not a conversation export |
+| [Previous Part D Revision](supplementary/NOTES_ApTap_PartD_Revised.md) | Preserved engineering-notes revision | Historical supporting document |
+| [Part D PDF Preview](../docs/submission/NOTES_ApTap_PartD_2Page_Preview.pdf) | Historical layout preview | Supplementary submission document |
+| [Canonical Part D Notes](../NOTES.md) | Final consolidated two-page engineering notes | Canonical submission document |
+
+The reconstructed dialogue must not be represented as an original ChatGPT or Codex session.
+
+## 5. Historical documentation audit
+
+### Phase 1 — Documentation reorganisation
+
+The original AI provenance audit found no authentic ChatGPT exports, verified conversation links or complete coding-agent histories in the inspected project directory.
+
+Supporting documents were separated into appropriate locations, and their content was preserved.
+
+### Phase 2 — Release-readiness verification, 15 October 2026
+
+At the time of this audit:
+
+- An original ChatGPT share link had been supplied.
+- Independent automated access attempts were inconclusive because of reader-size and local certificate-validation limitations.
+- The original conversation PDF was not yet present in the inspected project snapshot.
+- Complete coding-agent histories were not available.
+- The reconstructed engineering dialogue remained explicitly supplementary.
+
+These were historical audit findings, not the current status of Conversation 01.
+
+### Subsequent update — 16 October 2026
+
+The developer subsequently:
+
+1. Confirmed successful manual access to the original ChatGPT share link.
+2. Created `ApTap_Original_Chat_01.pdf`.
+3. Added the PDF to the Git repository.
+4. Relocated the original PDF to `original/chatgpt/` in the local project.
+
+The relocation and this index update must be committed and pushed together to make the current GitHub repository consistent.
+
+The complete contents of the PDF and coverage of every task-related AI session remain subject to verification.
+
+## 6. Remaining AI-provenance requirements
+
+Before final submission:
+
+1. Confirm that the exported ChatGPT PDF preserves the complete original conversation.
+2. Identify and include any other task-related LLM conversations and their applicable share links.
+3. Export the complete genuine Codex and other IDE coding-agent session histories used during the task, including documentation and release-readiness work.
+4. Review exports for secrets, credentials, unrelated personal information and confidential data before
