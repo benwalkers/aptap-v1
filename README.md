@@ -135,8 +135,11 @@ Root `NOTES.md` consolidates the previous versions and has a visually verified
 historical preview and documented print method. See the
 [Git packaging checklist](docs/GIT_PACKAGING_CHECKLIST.md) before submission.
 
-[AI provenance index](ai_transcripts/README.md): Conversation 01 now has a developer-supplied
-original ChatGPT share URL; independent accessibility/completeness are **UNVERIFIED**
-and `ApTap_Original_Chat_01.pdf` is pending. Complete exports, verified applicable
-links, other conversation references and coding-agent histories remain submission blockers. The reconstructed dialogue and knowledge base are supplementary,
-not original conversations. No transcript content was invented or edited.
+[AI provenance index](ai_transcripts/README.md): Conversation 01 has a
+[developer-verified accessible original ChatGPT share link](https://chatgpt.com/share/6ad153ef-5e70-83ed-a96f-a81767d892ee)
+and a PDF export committed to the repository. The developer has moved that PDF locally
+into `ai_transcripts/original/chatgpt/`; the repository relocation must still be
+pushed. The completeness of the export and coverage of any additional task-related
+LLM conversations have not been independently verified. Genuine Codex/IDE-agent
+session exports remain outstanding. The reconstructed dialogue and knowledge base
+are supplementary, not original conversations.
